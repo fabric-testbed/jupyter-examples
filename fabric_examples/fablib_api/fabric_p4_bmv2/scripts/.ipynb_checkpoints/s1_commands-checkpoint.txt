@@ -1,0 +1,4 @@
+table_set_default myTunnel_exact drop
+table_add myTunnel_exact myTunnel_forward 1 => 1
+table_add myTunnel_exact myTunnel_forward 2 => 2
+table_add myTunnel_exact myTunnel_forward 3 => 3
