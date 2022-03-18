@@ -4,13 +4,23 @@
 port1_iface=$1
 port2_iface=$2
 port3_iface=$3
+ip_type=$4
+
+# export http_proxy=socks5h://localhost:4567
+# export https_proxy=socks5h://localhost:4567
 
 echo Hello, FABRIC. From node `hostname -s`
 sudo apt-get update
 sudo apt-get install -y docker.io
-#docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 pruth/fabric-images:fabric_p4_simple_router
-docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 pruth/fabric-images:0.0.2j
-# ???? docker run -d -it fabric_p4 --device /dev/
+# docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 pruth/fabric-images:fabric_p4_simple_router
+
+if [ $ip_type = 'IPv4' ]
+then
+  docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 registry.ipv4.docker.com/pruth/fabric-images:0.0.2j
+else
+  docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 registry.ipv6.docker.com/pruth/fabric-images:0.0.2j
+fi
+
 sleep 10
 NSPID=$(docker inspect --format='{{ .State.Pid }}' fabric_p4)
 echo NSPID $NSPID
