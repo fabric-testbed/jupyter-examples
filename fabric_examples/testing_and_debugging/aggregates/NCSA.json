@@ -1,0 +1,280 @@
+{
+  "DataPlane": {
+    "IP": "192.168.20.3",
+    "Name": "ncsa-data-sw.fabric-testbed.net",
+    "SN": "FOC2527R175"
+  },
+  "Nodes": [
+    {
+      "Components": [
+        {
+          "BDF": "0000:21:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 22 in Bay 2 (0000:21:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0L1TAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:22:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 23 in Bay 2 (0000:22:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0L0TAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:a1:00.1",
+          "Connection": "Connected to port HundredGigE0/0/0/5 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 6 (0000:a1:00.1)",
+          "MAC": "B8:CE:F6:37:75:23",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/5",
+          "Slot": "6",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:25:00.0",
+          "Description": "NVIDIA Corporation TU102GL [Quadro RTX 6000/8000] (rev a1)",
+          "Model": "Quadro RTX 6000/8000",
+          "Type": "GPU"
+        },
+        {
+          "BDF": "0000:e2:00.0",
+          "Description": "NVIDIA Corporation TU102GL [Quadro RTX 6000/8000] (rev a1)",
+          "Model": "Quadro RTX 6000/8000",
+          "Type": "GPU"
+        },
+        {
+          "BDF": "0000:81:00.0",
+          "Description": "NVIDIA Corporation TU102GL [Quadro RTX 6000/8000] (rev a1)",
+          "Model": "Quadro RTX 6000/8000",
+          "Type": "GPU"
+        }
+      ],
+      "Model": {
+        "CPU": "2",
+        "Core": 64,
+        "Disk": "51.0 TB",
+        "Model": "R7525",
+        "RAM": "512G"
+      },
+      "Name": "ncsa-w1.fabric-testbed.net"
+    },
+    {
+      "Components": [
+        {
+          "BDF": "0000:21:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 22 in Bay 2 (0000:21:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8060A0CQTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:22:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 23 in Bay 2 (0000:22:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8060A0ETTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:23:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 20 in Bay 2 (0000:23:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8060A0EWTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:24:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 21 in Bay 2 (0000:24:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8060A0E3TAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:41:00.0",
+          "Connection": "Connected to port HundredGigE0/0/0/0 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 3 (0000:41:00.0)",
+          "MAC": "B8:CE:F6:37:75:1A",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/0",
+          "Slot": "3",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:41:00.1",
+          "Connection": "Connected to port HundredGigE0/0/0/2 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 3 (0000:41:00.1)",
+          "MAC": "B8:CE:F6:37:75:1B",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/2",
+          "Slot": "3",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:e2:00.1",
+          "Connection": "Connected to port HundredGigE0/0/0/9 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 7 (0000:e2:00.1)",
+          "MAC": "B8:CE:F6:37:75:8B",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/9",
+          "Slot": "7",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:a1:00.0",
+          "Connection": "Connected to port HundredGigE0/0/0/6 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 6 (0000:a1:00.0)",
+          "MAC": "B8:CE:F6:37:76:0A",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/6",
+          "Slot": "6",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:a1:00.1",
+          "Connection": "Connected to port HundredGigE0/0/0/4 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 6 (0000:a1:00.1)",
+          "MAC": "B8:CE:F6:37:76:0B",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/4",
+          "Slot": "6",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        }
+      ],
+      "Model": {
+        "CPU": "2",
+        "Core": 64,
+        "Disk": "4.8 TB",
+        "Model": "R7525",
+        "RAM": "512G"
+      },
+      "Name": "ncsa-w2.fabric-testbed.net"
+    },
+    {
+      "Components": [
+        {
+          "BDF": "0000:21:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 22 in Bay 2 (0000:21:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0NBTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:22:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 23 in Bay 2 (0000:22:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0GUTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:23:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 20 in Bay 2 (0000:23:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0NWTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:24:00.0",
+          "Description": "Dell Express Flash CD5 960G SFF in PCIe SSD Slot 21 in Bay 2 (0000:24:00.0)",
+          "Disk": "960G",
+          "Model": "P4510",
+          "SN": "8030A0GQTAFR",
+          "Type": "NVMe"
+        },
+        {
+          "BDF": "0000:a1:00.0",
+          "Connection": "Connected to port TwentyFiveGigE0/0/0/10/3 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT27800 Family [ConnectX-5] in PCIe Slot 6 (0000:a1:00.0)",
+          "MAC": "04:3F:72:CC:0E:DC",
+          "Model": "ConnectX-5",
+          "Peer_port": "TwentyFiveGigE0/0/0/10/3",
+          "Slot": "6",
+          "Speed": "10 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:a1:00.1",
+          "Connection": "Connected to port TwentyFiveGigE0/0/0/10/2 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT27800 Family [ConnectX-5] in PCIe Slot 6 (0000:a1:00.1)",
+          "MAC": "04:3F:72:CC:0E:DD",
+          "Model": "ConnectX-5",
+          "Peer_port": "TwentyFiveGigE0/0/0/10/2",
+          "Slot": "6",
+          "Speed": "10 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:41:00.0",
+          "Connection": "Connected to port TwentyFiveGigE0/0/0/10/0 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT27800 Family [ConnectX-5] in PCIe Slot 3 (0000:41:00.0)",
+          "MAC": "04:3F:72:CC:10:2C",
+          "Model": "ConnectX-5",
+          "Peer_port": "TwentyFiveGigE0/0/0/10/0",
+          "Slot": "3",
+          "Speed": "10 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:41:00.1",
+          "Connection": "Connected to port TwentyFiveGigE0/0/0/10/1 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT27800 Family [ConnectX-5] in PCIe Slot 3 (0000:41:00.1)",
+          "MAC": "04:3F:72:CC:10:2D",
+          "Model": "ConnectX-5",
+          "Peer_port": "TwentyFiveGigE0/0/0/10/1",
+          "Slot": "3",
+          "Speed": "10 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:e2:00.1",
+          "Connection": "Connected to port HundredGigE0/0/0/13 on ncsa-data-sw",
+          "Description": "Mellanox Technologies MT28908 Family [ConnectX-6] in PCIe Slot 7 (0000:e2:00.1)",
+          "MAC": "B8:CE:F6:37:75:6B",
+          "Model": "ConnectX-6",
+          "Peer_port": "HundredGigE0/0/0/13",
+          "Slot": "7",
+          "Speed": "100 Gbps",
+          "Type": "EthernetCardPF"
+        },
+        {
+          "BDF": "0000:25:00.0",
+          "Description": "NVIDIA Corporation TU104GL [Tesla T4] (rev a1)",
+          "Model": "Tesla T4",
+          "Type": "GPU"
+        },
+        {
+          "BDF": "0000:81:00.0",
+          "Description": "NVIDIA Corporation TU104GL [Tesla T4] (rev a1)",
+          "Model": "Tesla T4",
+          "Type": "GPU"
+        }
+      ],
+      "Model": {
+        "CPU": "2",
+        "Core": 64,
+        "Disk": "4.8 TB",
+        "Model": "R7525",
+        "RAM": "512G"
+      },
+      "Name": "ncsa-w3.fabric-testbed.net"
+    }
+  ],
+  "Storage": {
+    "Name": "ncsa-storage.fabric-testbed.net",
+    "SN": "H43GZB3"
+  }
+}
