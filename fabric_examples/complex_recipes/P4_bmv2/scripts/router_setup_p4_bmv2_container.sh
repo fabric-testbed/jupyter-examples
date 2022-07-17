@@ -24,6 +24,10 @@ then
   docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 registry.ipv4.docker.com/pruth/fabric-images:0.0.2j
 else
   docker run -d -it --cap-add=NET_ADMIN --privileged --name fabric_p4 registry.ipv6.docker.com/pruth/fabric-images:0.0.2j
+  sed -i '/nameserver/d' /etc/resolv.conf 
+  echo nameserver 2a00:1098:2c::1 >> /etc/resolv.conf 
+  echo nameserver 2a01:4f8:c2c:123f::1 >> /etc/resolv.conf 
+  echo nameserver 2a00:1098:2b::1 >> /etc/resolv.conf 
 fi
 
 sleep 10
