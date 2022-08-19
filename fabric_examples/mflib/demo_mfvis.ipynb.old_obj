@@ -15,6 +15,83 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0a901465-bb9a-4934-9f7b-5e3582ed1f3c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import json\n",
+    "import traceback"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "84ab2cb6",
+   "metadata": {},
+   "source": [
+    "# Setup MFLib Object"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0b0347ef-07d2-476e-8992-fffbe2baf110",
+   "metadata": {},
+   "source": [
+    "### Import MFLib and Create MF Object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0e559aff-f2dc-48db-8d58-2536c30b8eac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from mflib import mflib\n",
+    "mf = mflib()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5eabe368-771d-4cfb-84cb-761c50e8253b",
+   "metadata": {},
+   "source": [
+    "### Initialize MF Object with the Name of the Slice"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "36e20733-6f3e-4053-b715-1891bab77deb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "slice_name = \"MF\"\n",
+    "mf.init(slice_name)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "678ead6c-fbbe-4755-a747-7e0f6fafe412",
+   "metadata": {},
+   "source": [
+    "### Open SSH Tunnel for Grafana"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6abba814-dcd5-4230-837b-5f0555a7f0c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(mf.grafana_tunnel)"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "id": "4bd9bcab-1667-4558-9493-118b72b78f07",
    "metadata": {},
@@ -55,27 +132,8 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "slice_name = \"MF\"\n",
-    "mfv = mfvis.mfvis(slice_name=slice_name)\n",
+    "mfv = mfvis.mfvis(mf)\n",
     "print(\"Done\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ed6148ec",
-   "metadata": {},
-   "source": [
-    "### Setup Grafana Tunnel"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "c6c8120d",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "print(mfv.mf.grafana_tunnel)"
    ]
   },
   {
@@ -191,7 +249,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.10"
+   "version": "3.9.7"
   },
   "vscode": {
    "interpreter": {
