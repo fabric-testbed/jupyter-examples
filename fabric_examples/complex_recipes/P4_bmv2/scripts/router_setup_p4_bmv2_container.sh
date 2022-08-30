@@ -54,7 +54,7 @@ echo Starting switch
 docker exec -w /root/tutorials/exercises/basic_tunnel fabric_p4 sh -c 'cp basic_tunnel.p4 basic_tunnel.working.p4'
 docker exec -w /root/tutorials/exercises/basic_tunnel fabric_p4 sh -c 'cp solution/basic_tunnel.p4 basic_tunnel.p4'
 docker exec -w /root/tutorials/exercises/basic_tunnel fabric_p4 sh -c 'p4c --p4runtime-files basic_tunnel.txt --target bmv2 --arch v1model basic_tunnel.p4'
-docker exec -d -it fabric_p4 sh -c 'simple_switch --interface 1@'${port1_iface}' --interface 2@'${port2_iface}' --interface 3@'${port3_iface}' /root/tutorials/exercises/basic_tunnel/basic_tunnel.json'
+docker exec -d -it fabric_p4 sh -c 'simple_switch '${switch_interface_args}' /root/tutorials/exercises/basic_tunnel/basic_tunnel.json'
 #docker exec -it fabric_p4 simple_switch_CLI
 #sudo sh -c 'cat commands.txt | docker exec -i fabric_p4 simple_switch_CLI --thrift-port 9090
 #sudo sh -c 'echo table_dump myTunnel_exact | docker exec -i fabric_p4 simple_switch_CLI --thrift-port 9090 '
