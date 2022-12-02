@@ -1,0 +1,249 @@
+{
+    "slice": {},
+    "networks": [
+        {
+            "name": "dall",
+            "site": "DALL",
+            "facility": "FABRIC",
+            "subnet": "192.168.1.0/24",
+            "router": {
+                "name": "dall_router",
+                "facility": "FABRIC",
+                "network": "dall",
+                "ip": "192.168.1.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        },
+        {
+            "name": "tacc",
+            "site": "TACC",
+            "facility": "FABRIC",
+            "subnet": "192.168.2.0/24",
+            "router": {
+                "name": "tacc_router",
+                "facility": "FABRIC",
+                "network": "tacc",
+                "ip": "192.168.2.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        },
+        {
+            "name": "utah",
+            "site": "UTAH",
+            "facility": "FABRIC",
+            "subnet": "192.168.3.0/24",
+            "router": {
+                "name": "utah_router",
+                "facility": "FABRIC",
+                "network": "utah",
+                "ip": "192.168.3.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        },
+        {
+            "name": "wash",
+            "site": "WASH",
+            "facility": "FABRIC",
+            "subnet": "192.168.4.0/24",
+            "router": {
+                "name": "wash_router",
+                "facility": "FABRIC",
+                "network": "wash",
+                "ip": "192.168.4.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "link0",
+            "subnet": "192.168.100.0/24",
+            "endpoints": [
+                {
+                    "router_name": "dall_router",
+                    "ip": "192.168.100.1"
+                },
+                {
+                    "router_name": "wash_router",
+                    "ip": "192.168.100.2"
+                }
+            ]
+        },
+        {
+            "name": "link1",
+            "subnet": "192.168.101.0/24",
+            "endpoints": [
+                {
+                    "router_name": "dall_router",
+                    "ip": "192.168.101.1"
+                },
+                {
+                    "router_name": "utah_router",
+                    "ip": "192.168.101.2"
+                }
+            ]
+        },
+        {
+            "name": "link2",
+            "subnet": "192.168.102.0/24",
+            "endpoints": [
+                {
+                    "router_name": "utah_router",
+                    "ip": "192.168.102.1"
+                },
+                {
+                    "router_name": "wash_router",
+                    "ip": "192.168.102.2"
+                }
+            ]
+        },
+        {
+            "name": "link3",
+            "subnet": "192.168.103.0/24",
+            "endpoints": [
+                {
+                    "router_name": "tacc_router",
+                    "ip": "192.168.103.1"
+                },
+                {
+                    "router_name": "dall_router",
+                    "ip": "192.168.103.2"
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "dall_node1",
+            "facility": "FABRIC",
+            "network": "dall",
+            "ip": "192.168.1.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.1.1"
+                ]
+            ]
+        },
+        {
+            "name": "dall_node2",
+            "facility": "FABRIC",
+            "network": "dall",
+            "ip": "192.168.1.101",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.1.1"
+                ]
+            ]
+        },
+        {
+            "name": "tacc_node1",
+            "facility": "FABRIC",
+            "network": "tacc",
+            "ip": "192.168.2.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.2.1"
+                ]
+            ]
+        },
+        {
+            "name": "tacc_node2",
+            "facility": "FABRIC",
+            "network": "tacc",
+            "ip": "192.168.2.101",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.2.1"
+                ]
+            ]
+        },
+        {
+            "name": "utah_node1",
+            "facility": "FABRIC",
+            "network": "utah",
+            "ip": "192.168.3.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.3.1"
+                ]
+            ]
+        },
+        {
+            "name": "utah_node2",
+            "facility": "FABRIC",
+            "network": "utah",
+            "ip": "192.168.3.101",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.3.1"
+                ]
+            ]
+        },
+        {
+            "name": "wash_node1",
+            "facility": "FABRIC",
+            "network": "wash",
+            "ip": "192.168.4.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.4.1"
+                ]
+            ]
+        },
+        {
+            "name": "wash_node2",
+            "facility": "FABRIC",
+            "network": "wash",
+            "ip": "192.168.4.101",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.4.1"
+                ]
+            ]
+        }
+    ]
+}
