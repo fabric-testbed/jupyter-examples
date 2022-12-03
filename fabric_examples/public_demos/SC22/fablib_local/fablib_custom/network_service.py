@@ -72,11 +72,11 @@ class NetworkService_Custom():
 from fabrictestbed_extensions.fablib.network_service import NetworkService
 
 #fablib.Slice
-setattr(NetworkService, 'allocate_ip', NetworkService_Custom.allocate_ip )
-setattr(NetworkService, 'get_userdata', NetworkService_Custom.get_userdata )
+#setattr(NetworkService, 'allocate_ip', NetworkService_Custom.allocate_ip )
+#setattr(NetworkService, 'get_userdata', NetworkService_Custom.get_userdata )
 
-setattr(NetworkService, 'set_gateway', NetworkService_Custom.set_gateway )
-setattr(NetworkService, 'set_subnet', NetworkService_Custom.set_subnet )
+#setattr(NetworkService, 'set_gateway', NetworkService_Custom.set_gateway )
+#setattr(NetworkService, 'set_subnet', NetworkService_Custom.set_subnet )
 
 
             

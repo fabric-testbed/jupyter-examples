@@ -105,9 +105,9 @@ from fabrictestbed_extensions.fablib.interface import Interface
 
 
 #fablib.Interface
-setattr(Interface, 'get_userdata', Interface_Custom.get_userdata)
-setattr(Interface, 'add_ip', Interface_Custom.add_ip)
-setattr(Interface, 'init_for_network_manager', Interface_Custom.init_for_network_manager)
-setattr(Interface, 'get_ip', Interface_Custom.get_ip)
-setattr(Interface, 'init_userdata', Interface_Custom.init_userdata)
-setattr(Interface, 'get_device_name', Interface_Custom.get_device_name)
+#setattr(Interface, 'get_userdata', Interface_Custom.get_userdata)
+#setattr(Interface, 'add_ip', Interface_Custom.add_ip)
+#setattr(Interface, 'init_for_network_manager', Interface_Custom.init_for_network_manager)
+#setattr(Interface, 'get_ip', Interface_Custom.get_ip)
+#setattr(Interface, 'init_userdata', Interface_Custom.init_userdata)
+#setattr(Interface, 'get_device_name', Interface_Custom.get_device_name)

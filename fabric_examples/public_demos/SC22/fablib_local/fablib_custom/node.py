@@ -116,9 +116,9 @@ from fabrictestbed_extensions.fablib.node import Node
 
 #fablib.Node
 setattr(Node, 'add_static_route', Node_Custom.add_static_route)
-setattr(Node, 'get_userdata', Node_Custom.get_userdata)
-setattr(Node, 'init_userdata', Node_Custom.init_userdata)
-setattr(Node, 'upload_directory', Node_Custom.upload_directory)
+#setattr(Node, 'get_userdata', Node_Custom.get_userdata)
+#setattr(Node, 'init_userdata', Node_Custom.init_userdata)
+#setattr(Node, 'upload_directory', Node_Custom.upload_directory)
 #setattr(Node, 'execute', Node_Custom.execute)
 
 
