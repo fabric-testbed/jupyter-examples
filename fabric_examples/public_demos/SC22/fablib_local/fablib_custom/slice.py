@@ -59,9 +59,9 @@ class Slice_Custom():
 from fabrictestbed_extensions.fablib.slice import Slice
 
 #fablib.Slice
-setattr(Slice, 'init_userdata', Slice_Custom.init_userdata)
-setattr(Slice, 'init_network_manager', Slice_Custom.init_network_manager)
-setattr(Slice, 'get_userdata', Slice_Custom.get_userdata)
+#setattr(Slice, 'init_userdata', Slice_Custom.init_userdata)
+#setattr(Slice, 'init_network_manager', Slice_Custom.init_network_manager)
+#setattr(Slice, 'get_userdata', Slice_Custom.get_userdata)
 
 #setattr(Slice, 'get_slice_id', Slice_Custom.get_slice_id)
 #setattr(Slice, 'list_nodes_pandas', Slice_Custom.list_nodes_pandas)
