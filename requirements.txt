@@ -1,1 +1,1 @@
-fabrictestbed-extensions==1.4.0
+fabrictestbed-extensions==1.4.1
