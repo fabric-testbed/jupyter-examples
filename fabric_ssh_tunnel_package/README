@@ -1,0 +1,8 @@
+
+Examples:
+scp -i slice_key -F ssh_config  myfile  'rocky@[2001:400:a100:3000:f816:3eff:fe91:261b]:.' 
+
+
+With tunnel:
+scp -i slice_key -P 5555 myfile  rocky@127.0.0.1:.
+
