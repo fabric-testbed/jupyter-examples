@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  httpd:
+    image: httpd
+    network_mode: bridge
+    #ports:
+    #  - "stoarage_server:80:80"
+    volumes:
+      - /mnt/fabric_storage:/usr/local/apache2/htdocs/
+    network_mode: service:fabric
+
+      
