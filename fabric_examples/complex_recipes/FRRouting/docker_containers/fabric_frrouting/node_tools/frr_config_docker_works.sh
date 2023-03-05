@@ -6,9 +6,15 @@ path=$(dirname "$0")/..
 
 cd $path
 
-NIC_LOCAL=$1
-IP_LOCAL=$2
-SUBNET_ALL=$3
+NIC_1=$1
+NIC_2=$3
+NIC_LOCAL=$5
+
+IP_1=$2
+IP_2=$4
+IP_LOCAL=$6
+
+SUBNET_ALL=$7
 
 HOSTNAME=$(hostname)
 
@@ -118,6 +124,12 @@ cat > frr/zebra.conf <<EOL
 hostname $HOSTNAME 
 log file /var/log/zebra.log
 !
+interface ${NIC_1}
+ ip address ${IP_1}/24
+!
+interface ${NIC_2}
+ ip address ${IP_2}/24 
+!
 interface ${NIC_LOCAL}
  ip address ${IP_LOCAL}/24
 EOL
@@ -127,6 +139,14 @@ EOL
 cat > frr/ospfd.conf  <<EOL
 hostname $HOSTNAME
 log file /var/log/ospfd.log
+!
+interface ${NIC_1}
+ ip ospf hello-interval 60
+ ip ospf dead-interval 240
+!
+interface ${NIC_2}
+ ip ospf hello-interval 60
+ ip ospf dead-interval 240
 !
 interface ${NIC_LOCAL}
  ip ospf hello-interval 60

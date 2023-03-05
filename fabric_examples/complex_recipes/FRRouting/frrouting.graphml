@@ -1,0 +1,1369 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d14" for="edge" attr.name="Class" attr.type="string" />
+  <key id="d13" for="node" attr.name="Labels" attr.type="string" />
+  <key id="d12" for="node" attr.name="Details" attr.type="string" />
+  <key id="d11" for="node" attr.name="Model" attr.type="string" />
+  <key id="d10" for="node" attr.name="ImageRef" attr.type="string" />
+  <key id="d9" for="node" attr.name="Capacities" attr.type="string" />
+  <key id="d8" for="node" attr.name="Site" attr.type="string" />
+  <key id="d7" for="node" attr.name="UserData" attr.type="string" />
+  <key id="d6" for="node" attr.name="Layer" attr.type="string" />
+  <key id="d5" for="node" attr.name="StitchNode" attr.type="string" />
+  <key id="d4" for="node" attr.name="Type" attr.type="string" />
+  <key id="d3" for="node" attr.name="Name" attr.type="string" />
+  <key id="d2" for="node" attr.name="NodeID" attr.type="string" />
+  <key id="d1" for="node" attr.name="Class" attr.type="string" />
+  <key id="d0" for="node" attr.name="GraphID" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="1">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">da823f2d-8699-4b1e-8827-32a964f3f7a5</data>
+      <data key="d3">control_net_UCSD</data>
+      <data key="d4">FABNetv4</data>
+      <data key="d5">false</data>
+      <data key="d6">L3</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual"}}</data>
+    </node>
+    <node id="2">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">53d0216b-4b68-4ffd-99f2-170b55634f05</data>
+      <data key="d3">routerUCSD</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">UCSD</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_frrouting/node_tools/frr_config_docker.sh {% for component in _self_.components %}{% if component.short_name == 'nic_local' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.1.1 '192.168.0.0'"], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'UCSD-WASH-link1' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.101.1 "], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'UTAH-UCSD-link3' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.103.2 "], ["execute", "./docker_containers/fabric_frrouting/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "10.128.0.0/10", "next_hop": "control_net_UCSD.gateway"}]}, "frr": {"local_iface": "routerUCSD-nic_local-p1", "link_ifaces": ["routerUCSD-UCSD-WASH-link1-p1", "routerUCSD-UTAH-UCSD-link3-p1"]}}</data>
+    </node>
+    <node id="3">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">d8a611b8-3ce6-48a8-94f4-fda03e62f5db</data>
+      <data key="d3">routerUCSD-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="4">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">ad6ffefd-45b9-4d2d-9f9e-e59c1d373d59</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="5">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">29b0bf41-cb38-469a-ae24-c10b7065cd9b</data>
+      <data key="d3">routerUCSD-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="6">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">2ae3ec77-2ec0-4687-8e5e-2b576018a442</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="7">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">3c365517-c139-4b6d-89aa-7ba23b951a05</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="8">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">568e04d9-af78-40ec-84b6-74082621a51e</data>
+      <data key="d3">routerUCSD-nic_local</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="9">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">f55442de-13cf-477f-9378-b6f2c7ecd77b</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_local-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="10">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">18f42951-1844-4a2e-8664-2ab0afe0cc27</data>
+      <data key="d3">routerUCSD-nic_local-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.1.1"}}</data>
+    </node>
+    <node id="11">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">3fe9e8d8-0fab-4068-8a9f-b391f11cb32f</data>
+      <data key="d3">net_localUCSD</data>
+      <data key="d4">L2Bridge</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.1.0/24", "allocated_ips": ["192.168.1.1"], "gateway": "192.168.1.1"}}}</data>
+    </node>
+    <node id="12">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">e3220ff5-f6d7-4bc5-9353-65f673794ed8</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_local-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="13">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">30fe8d0b-6058-4372-ba2d-718242150b7d</data>
+      <data key="d3">routerUCSD-routerUCSD-nic_local-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="14">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">8c68c3e3-6ff2-464f-ad8e-c824ea5b6041</data>
+      <data key="d3">control_net_WASH</data>
+      <data key="d4">FABNetv4</data>
+      <data key="d5">false</data>
+      <data key="d6">L3</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual"}}</data>
+    </node>
+    <node id="15">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">36cebc4c-1b1e-4849-89f8-1d2085038954</data>
+      <data key="d3">routerWASH</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">WASH</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_frrouting/node_tools/frr_config_docker.sh {% for component in _self_.components %}{% if component.short_name == 'nic_local' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.2.1 '192.168.0.0'"], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'UCSD-WASH-link1' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.101.2 "], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'WASH-UTAH-link2' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.102.1 "], ["execute", "./docker_containers/fabric_frrouting/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "10.128.0.0/10", "next_hop": "control_net_WASH.gateway"}]}, "frr": {"local_iface": "routerWASH-nic_local-p1", "link_ifaces": ["routerWASH-UCSD-WASH-link1-p1", "routerWASH-WASH-UTAH-link2-p1"]}}</data>
+    </node>
+    <node id="16">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">401fce94-006c-4ad7-ab48-efc81637de4f</data>
+      <data key="d3">routerWASH-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="17">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">f31d0319-e329-4348-b2ac-9a0fdbc2505e</data>
+      <data key="d3">routerWASH-routerWASH-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="18">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">4d42d8f7-9428-4fe1-99a8-4052cd777106</data>
+      <data key="d3">routerWASH-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="19">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">7164a989-5cfc-4ae0-8570-dcb93178abb1</data>
+      <data key="d3">routerWASH-routerWASH-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="20">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">7f52d1cf-9ee4-4109-9298-a0b0127a9a50</data>
+      <data key="d3">routerWASH-routerWASH-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="21">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">fc7a03b2-c84f-462a-b87d-21d4b03665bc</data>
+      <data key="d3">routerWASH-nic_local</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="22">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">bd609c27-e386-4cf3-b39c-36488ea7496c</data>
+      <data key="d3">routerWASH-routerWASH-nic_local-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="23">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">426f599b-9e74-4fe5-8d9f-ab7a875af1f3</data>
+      <data key="d3">routerWASH-nic_local-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.2.1"}}</data>
+    </node>
+    <node id="24">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">ace64cb9-fe12-423a-b077-6569c3d3f81e</data>
+      <data key="d3">net_localWASH</data>
+      <data key="d4">L2Bridge</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.2.0/24", "allocated_ips": ["192.168.2.1"], "gateway": "192.168.2.1"}}}</data>
+    </node>
+    <node id="25">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">087355ef-b8d8-408e-9279-e07e359a4639</data>
+      <data key="d3">routerWASH-routerWASH-nic_local-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="26">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">c44f0e68-3477-4b88-9cfd-0da985b2a155</data>
+      <data key="d3">routerWASH-routerWASH-nic_local-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="27">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">f6a6baf8-d48e-4a0a-8d8d-4b3a6e09b946</data>
+      <data key="d3">control_net_UTAH</data>
+      <data key="d4">FABNetv4</data>
+      <data key="d5">false</data>
+      <data key="d6">L3</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual"}}</data>
+    </node>
+    <node id="28">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">6a8bf9a7-bac7-4b32-95e0-ded0e2be00c0</data>
+      <data key="d3">routerUTAH</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">UTAH</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_frrouting/node_tools/frr_config_docker.sh {% for component in _self_.components %}{% if component.short_name == 'nic_local' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.3.1 '192.168.0.0'"], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'WASH-UTAH-link2' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.102.2 "], ["execute", "./docker_containers/fabric_frrouting/node_tools/add_ospf_neighbor.sh {% for component in _self_.components %}{% if component.interfaces[0].network == 'UTAH-UCSD-link3' %}{{ component.interfaces[0].dev }}{% endif %}{% endfor %} 192.168.103.1 "], ["execute", "./docker_containers/fabric_frrouting/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "10.128.0.0/10", "next_hop": "control_net_UTAH.gateway"}]}, "frr": {"local_iface": "routerUTAH-nic_local-p1", "link_ifaces": ["routerUTAH-WASH-UTAH-link2-p1", "routerUTAH-UTAH-UCSD-link3-p1"]}}</data>
+    </node>
+    <node id="29">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">673e3fa4-c87f-4813-a319-d7d03b6a23c8</data>
+      <data key="d3">routerUTAH-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="30">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">77ce671b-2ff5-41cd-80d0-0dd3690ffdf4</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="31">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">d1b39815-f40c-4e57-8dac-7170dcebbf91</data>
+      <data key="d3">routerUTAH-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="32">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">6be26d08-695e-4a14-86d2-77dd9a872858</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="33">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">0bc897bc-6121-4ede-80d1-31c1819da086</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="34">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">73d67ea3-6c1b-4d3f-8c99-dd86b65486c1</data>
+      <data key="d3">routerUTAH-nic_local</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="35">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">f222a2a5-2f92-4c88-954c-afcf49871959</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_local-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="36">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">486443f7-1c67-4bfb-9d29-7262be73c2ec</data>
+      <data key="d3">routerUTAH-nic_local-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.3.1"}}</data>
+    </node>
+    <node id="37">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">868b6022-c791-48d0-a0dd-fa1365e027ed</data>
+      <data key="d3">net_localUTAH</data>
+      <data key="d4">L2Bridge</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.3.0/24", "allocated_ips": ["192.168.3.1"], "gateway": "192.168.3.1"}}}</data>
+    </node>
+    <node id="38">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">4e0eb2c2-5087-471d-bc9e-b1068262bf82</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_local-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="39">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">06a8e386-f3c6-4df8-8a7c-faa2e87f591f</data>
+      <data key="d3">routerUTAH-routerUTAH-nic_local-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="41">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">5223e1ce-0ef8-469e-b26a-0312a36d1e37</data>
+      <data key="d3">routerUCSD-UCSD-WASH-link1</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="42">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">d0f09096-8fb8-4c4b-8ce0-445ea75501cf</data>
+      <data key="d3">routerUCSD-routerUCSD-UCSD-WASH-link1-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="43">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">1644a7c1-d794-4ba6-9ebb-08c40251a760</data>
+      <data key="d3">routerUCSD-UCSD-WASH-link1-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.101.1"}}</data>
+    </node>
+    <node id="44">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">3d21b19f-6afb-4f9d-a3cc-f6808adb951c</data>
+      <data key="d3">routerWASH-UCSD-WASH-link1</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="45">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">c3cc409b-8592-4a64-99f3-18b0daef9eee</data>
+      <data key="d3">routerWASH-routerWASH-UCSD-WASH-link1-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="46">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">50986572-32ae-4472-941b-ebae2af4218a</data>
+      <data key="d3">routerWASH-UCSD-WASH-link1-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.101.2"}}</data>
+    </node>
+    <node id="49">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">240ea42e-6860-4547-8210-e1832166fb25</data>
+      <data key="d3">UCSD-WASH-link1</data>
+      <data key="d4">L2STS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.101.0/24", "allocated_ips": ["192.168.101.1", "192.168.101.2"]}}}</data>
+    </node>
+    <node id="50">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">11bd8c1c-0c86-4403-bc18-ba454e4a26b0</data>
+      <data key="d3">routerUCSD-routerUCSD-UCSD-WASH-link1-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="51">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">e6c9a772-c66a-4152-b7b3-a47905ffd6d8</data>
+      <data key="d3">routerUCSD-routerUCSD-UCSD-WASH-link1-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="52">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">ebec5965-3e42-4bb0-b1a1-3c892d899ada</data>
+      <data key="d3">routerWASH-routerWASH-UCSD-WASH-link1-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="53">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">2d3e538d-e2e2-49b1-a95f-cd44c8d796d9</data>
+      <data key="d3">routerWASH-routerWASH-UCSD-WASH-link1-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="55">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">6eae2dfb-4dde-4236-96c8-e4a32e2e49d6</data>
+      <data key="d3">routerWASH-WASH-UTAH-link2</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="56">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">5efada19-2cdb-4a9a-94b5-95300b97888e</data>
+      <data key="d3">routerWASH-routerWASH-WASH-UTAH-link2-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="57">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">08f41afc-b7dd-469a-a835-4f0b1850db2f</data>
+      <data key="d3">routerWASH-WASH-UTAH-link2-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.102.1"}}</data>
+    </node>
+    <node id="58">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">e07dcfbd-265c-42a6-b4d9-e0c38ab94074</data>
+      <data key="d3">routerUTAH-WASH-UTAH-link2</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="59">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">dd826dd0-56d8-4688-a202-a6dbe39e0f0e</data>
+      <data key="d3">routerUTAH-routerUTAH-WASH-UTAH-link2-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="60">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">74b6da85-a801-4a97-b0f9-d7a8db1c0a62</data>
+      <data key="d3">routerUTAH-WASH-UTAH-link2-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.102.2"}}</data>
+    </node>
+    <node id="63">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">1e95522d-6297-409c-ad12-d742b05d7ad5</data>
+      <data key="d3">WASH-UTAH-link2</data>
+      <data key="d4">L2STS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.102.0/24", "allocated_ips": ["192.168.102.1", "192.168.102.2"]}}}</data>
+    </node>
+    <node id="64">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">c67cad15-2563-4503-9e9e-664a6d107d2e</data>
+      <data key="d3">routerWASH-routerWASH-WASH-UTAH-link2-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="65">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">eb093b72-d160-4157-b025-399b16c71afa</data>
+      <data key="d3">routerWASH-routerWASH-WASH-UTAH-link2-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="66">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">5d74d08d-124d-4487-a6ea-99d5fc01fffa</data>
+      <data key="d3">routerUTAH-routerUTAH-WASH-UTAH-link2-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="67">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">6b572bf5-25eb-414e-bea5-785a10eb6dd2</data>
+      <data key="d3">routerUTAH-routerUTAH-WASH-UTAH-link2-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="69">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">6c89b7b7-7485-45a3-8622-c6d99b4eb2ab</data>
+      <data key="d3">routerUTAH-UTAH-UCSD-link3</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="70">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">a751450d-6986-448d-b5fa-7ee7dee1080e</data>
+      <data key="d3">routerUTAH-routerUTAH-UTAH-UCSD-link3-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="71">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">36e58759-b7da-4b37-b4f5-c9f62f61e051</data>
+      <data key="d3">routerUTAH-UTAH-UCSD-link3-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.103.1"}}</data>
+    </node>
+    <node id="72">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">febf1534-7149-4134-860f-d9ec4291804a</data>
+      <data key="d3">routerUCSD-UTAH-UCSD-link3</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="73">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">6db405d1-7bbe-4df0-9f44-b75d47ee3889</data>
+      <data key="d3">routerUCSD-routerUCSD-UTAH-UCSD-link3-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="74">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">6659adb7-cc4b-4a1a-91b6-f81e0aa455be</data>
+      <data key="d3">routerUCSD-UTAH-UCSD-link3-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "fablib", "addr": "192.168.103.2"}}</data>
+    </node>
+    <node id="77">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">3caf2f7e-8fc4-449e-8737-c9739ac3c180</data>
+      <data key="d3">UTAH-UCSD-link3</data>
+      <data key="d4">L2STS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "mode": "manual", "subnet": {"subnet": "192.168.103.0/24", "allocated_ips": ["192.168.103.1", "192.168.103.2"]}}}</data>
+    </node>
+    <node id="78">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">d9ea9205-98e6-4a8a-837b-d16864a10901</data>
+      <data key="d3">routerUTAH-routerUTAH-UTAH-UCSD-link3-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="79">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">6389fdd8-c245-43e0-9aa1-96f8c1bf6ba1</data>
+      <data key="d3">routerUTAH-routerUTAH-UTAH-UCSD-link3-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="80">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">a9b6ef52-5073-429b-a4e7-1328863d37f9</data>
+      <data key="d3">routerUCSD-routerUCSD-UTAH-UCSD-link3-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="81">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">7ce0b135-2f4b-4bbe-b569-c90ec216c6de</data>
+      <data key="d3">routerUCSD-routerUCSD-UTAH-UCSD-link3-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="82">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">01f76727-e8ed-4856-9ed3-19f7d99649dc</data>
+      <data key="d3">ucsd1</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">UCSD</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "echo node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }} &gt;&gt; commands.txt"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_multitool/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "192.168.0.0/16", "next_hop": "net_localUCSD.gateway"}, {"subnet": "10.128.0.0/10", "next_hop": "control_net_UCSD.gateway"}]}}</data>
+    </node>
+    <node id="83">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">c6262b61-bf3e-485c-baa5-d6612b03285c</data>
+      <data key="d3">ucsd1-nic1</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="84">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">f491521b-eb47-4515-bcce-b01375a9d544</data>
+      <data key="d3">ucsd1-ucsd1-nic1-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="85">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">5e796e5f-c018-41f3-b9f0-be488ee15a77</data>
+      <data key="d3">ucsd1-nic1-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="86">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">102054b2-4a9a-454c-9a3a-2272f4f9f8d2</data>
+      <data key="d3">ucsd1-ucsd1-nic1-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="87">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">e032f23b-6144-4e07-9404-55691d6c68c5</data>
+      <data key="d3">ucsd1-ucsd1-nic1-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="88">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">47d4e6bb-1b3a-47cf-84b6-0455632a126d</data>
+      <data key="d3">ucsd1-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="89">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">26f68ec1-9eca-46d9-9d14-b702e39db971</data>
+      <data key="d3">ucsd1-ucsd1-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="90">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">023cde13-8a96-4529-b540-6b2256459f26</data>
+      <data key="d3">ucsd1-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="91">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">15bd1d0c-10f2-4e6e-80cf-28149a8674ef</data>
+      <data key="d3">ucsd1-ucsd1-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="92">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">74a75ebc-7e32-4dd7-8542-8ebca0a11ac2</data>
+      <data key="d3">ucsd1-ucsd1-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="93">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">d51ffbe9-4c1c-4e84-97f0-43c5df9f2b35</data>
+      <data key="d3">wash1</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">WASH</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "echo node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }} &gt;&gt; commands.txt"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_multitool/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "192.168.0.0/16", "next_hop": "net_localWASH.gateway"}, {"subnet": "10.128.0.0/10", "next_hop": "control_net_WASH.gateway"}]}}</data>
+    </node>
+    <node id="94">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">9757765a-ae9a-433e-a662-b08bf25269bc</data>
+      <data key="d3">wash1-nic1</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="95">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">4fb2e30f-6a45-43be-a85c-e8e06940423b</data>
+      <data key="d3">wash1-wash1-nic1-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="96">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">498a7211-7d33-47af-8881-d890390d44db</data>
+      <data key="d3">wash1-nic1-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="97">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">0d09e765-3270-41a2-b26d-709674b4a36f</data>
+      <data key="d3">wash1-wash1-nic1-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="98">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">40743e15-29b6-4727-95c8-2f179e276b66</data>
+      <data key="d3">wash1-wash1-nic1-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="99">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">550a4ed5-784c-4686-9536-0efb7428a676</data>
+      <data key="d3">wash1-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="100">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">c0040bf1-3337-49bc-9160-e0601f605477</data>
+      <data key="d3">wash1-wash1-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="101">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">717fbaef-ac1d-459b-bb0d-d71ebb2d071f</data>
+      <data key="d3">wash1-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="102">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">34b705a5-31f8-4f56-a47d-fc5c639b8529</data>
+      <data key="d3">wash1-wash1-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="103">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">7238af20-3385-4c00-a214-0fe3594aa2a5</data>
+      <data key="d3">wash1-wash1-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="104">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkNode</data>
+      <data key="d2">e266e537-ded8-442a-a52e-e7a40269007b</data>
+      <data key="d3">utah1</data>
+      <data key="d4">VM</data>
+      <data key="d5">false</data>
+      <data key="d8">UTAH</data>
+      <data key="d9">{"core": 16, "disk": 100, "ram": 32}</data>
+      <data key="d10">default_rocky_8,qcow2</data>
+      <data key="d7">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_tasks": [["upload_directory", "node_tools", "."], ["execute", "node_tools/set_rocky_mirror.sh 10.133.130.2"], ["execute", "echo node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }} &gt;&gt; commands.txt"], ["execute", "node_tools/enable_docker.sh {{ _self_.image }} {{ _self_.username }}"], ["upload_directory", "docker_containers", "."], ["execute", "./docker_containers/fabric_multitool/start.sh {% for component in _self_.components %}{% for interface in component.interfaces %} {{ interface.dev }}{% endfor %}{% endfor %} "]], "post_update_commands": [], "routes": [{"subnet": "192.168.0.0/16", "next_hop": "net_localUTAH.gateway"}, {"subnet": "10.128.0.0/10", "next_hop": "control_net_UTAH.gateway"}]}}</data>
+    </node>
+    <node id="105">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">1608c68f-32a8-4fae-adec-863b434d1a0d</data>
+      <data key="d3">utah1-nic1</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="106">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">52741778-cf97-49a2-b3af-f19ae74c03f4</data>
+      <data key="d3">utah1-utah1-nic1-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="107">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">3c5e0c39-23d8-414e-8182-bee9a71f5bfd</data>
+      <data key="d3">utah1-nic1-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="108">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">b939e695-9f59-4ccf-92b0-e8e9ef3ceae8</data>
+      <data key="d3">utah1-utah1-nic1-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="109">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">8a5a6377-ee0f-4e4c-9e27-3fdb0f9903d4</data>
+      <data key="d3">utah1-utah1-nic1-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="110">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Component</data>
+      <data key="d2">88c3e9dd-b96a-46cc-a369-9108312aa122</data>
+      <data key="d3">utah1-nic_control</data>
+      <data key="d4">SharedNIC</data>
+      <data key="d11">ConnectX-6</data>
+      <data key="d12">Mellanox ConnectX-6 VPI MCX653 dual port 100Gbps</data>
+      <data key="d5">false</data>
+      <data key="d7">{}</data>
+    </node>
+    <node id="111">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">NetworkService</data>
+      <data key="d2">71e5c869-f187-4665-82c0-cb3265b82cfc</data>
+      <data key="d3">utah1-utah1-nic_control-l2ovs</data>
+      <data key="d4">OVS</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <node id="112">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">3bd2acec-053a-405c-9d04-c7bf55e088fe</data>
+      <data key="d3">utah1-nic_control-p1</data>
+      <data key="d4">SharedPort</data>
+      <data key="d9">{"unit": 1}</data>
+      <data key="d13">{"local_name": "p1"}</data>
+      <data key="d5">false</data>
+      <data key="d7">{"fablib_data": {"mode": "auto"}}</data>
+    </node>
+    <node id="113">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">ConnectionPoint</data>
+      <data key="d2">5f2d091f-ac0a-420a-8de5-ff99925c08ed</data>
+      <data key="d3">utah1-utah1-nic_control-p1</data>
+      <data key="d4">ServicePort</data>
+      <data key="d5">false</data>
+    </node>
+    <node id="114">
+      <data key="d0">c194ea0d-5e08-4227-8e96-e9cca7875a63</data>
+      <data key="d1">Link</data>
+      <data key="d2">8e84eb70-aa65-4d4c-b134-34086ac95f1c</data>
+      <data key="d3">utah1-utah1-nic_control-p1-link</data>
+      <data key="d4">L2Path</data>
+      <data key="d5">false</data>
+      <data key="d6">L2</data>
+    </node>
+    <edge source="1" target="6">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="1" target="91">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="2" target="3">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="2" target="8">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="2" target="41">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="2" target="72">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="3" target="4">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="4" target="5">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="5" target="7">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="6" target="7">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="8" target="9">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="9" target="10">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="10" target="13">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="11" target="12">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="11" target="86">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="12" target="13">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="14" target="19">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="14" target="102">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="15" target="16">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="15" target="21">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="15" target="44">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="15" target="55">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="16" target="17">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="17" target="18">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="18" target="20">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="19" target="20">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="21" target="22">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="22" target="23">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="23" target="26">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="24" target="25">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="24" target="97">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="25" target="26">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="27" target="32">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="27" target="113">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="28" target="29">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="28" target="34">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="28" target="58">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="28" target="69">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="29" target="30">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="30" target="31">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="31" target="33">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="32" target="33">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="34" target="35">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="35" target="36">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="36" target="39">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="37" target="38">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="37" target="108">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="38" target="39">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="41" target="42">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="42" target="43">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="43" target="51">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="44" target="45">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="45" target="46">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="46" target="53">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="49" target="50">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="49" target="52">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="50" target="51">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="52" target="53">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="55" target="56">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="56" target="57">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="57" target="65">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="58" target="59">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="59" target="60">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="60" target="67">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="63" target="64">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="63" target="66">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="64" target="65">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="66" target="67">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="69" target="70">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="70" target="71">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="71" target="79">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="72" target="73">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="73" target="74">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="74" target="81">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="77" target="78">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="77" target="80">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="78" target="79">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="80" target="81">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="82" target="83">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="82" target="88">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="83" target="84">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="84" target="85">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="85" target="87">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="86" target="87">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="88" target="89">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="89" target="90">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="90" target="92">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="91" target="92">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="93" target="94">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="93" target="99">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="94" target="95">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="95" target="96">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="96" target="98">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="97" target="98">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="99" target="100">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="100" target="101">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="101" target="103">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="102" target="103">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="104" target="105">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="104" target="110">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="105" target="106">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="106" target="107">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="107" target="109">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="108" target="109">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="110" target="111">
+      <data key="d14">has</data>
+    </edge>
+    <edge source="111" target="112">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="112" target="114">
+      <data key="d14">connects</data>
+    </edge>
+    <edge source="113" target="114">
+      <data key="d14">connects</data>
+    </edge>
+  </graph>
+</graphml>

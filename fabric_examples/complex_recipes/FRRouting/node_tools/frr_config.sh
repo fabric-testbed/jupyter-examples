@@ -1,32 +1,27 @@
 #!/bin/bash
 
-cwd=`pwd`
 
-path=$(dirname "$0")/..
+NIC_1=$1
+NIC_2=$3
+NIC_LOCAL=$5
 
-cd $path
+IP_1=$2
+IP_2=$4
+IP_LOCAL=$6
 
-NIC_LOCAL=$1
-IP_LOCAL=$2
-SUBNET_ALL=$3
+SUBNET_ALL=$7
 
 HOSTNAME=$(hostname)
 
-
 {
 
-#sudo dnf install -y vim tcpdump frr
+
+sudo dnf install -y vim tcpdump frr
 sudo sysctl -w net.ipv4.ip_forward=1
 
+#sudo sed -i 's/ospfd=no/ospfd=yes/g' /etc/frr/daemons
 
-#cp -a /etc/frr .
-#sudo chown -R rocky:rocky frr
-mkdir -p frr
-sudo chown -R rocky:rocky frr
-
-#sudo sed -i 's/ospfd=no/ospfd=yes/g' frr/daemons
-
-cat > frr/daemons <<EOL
+cat > /etc/frr/daemons <<EOL
 # This file tells the frr package which daemons to start.
 #
 # Sample configurations for these daemons can be found in
@@ -114,9 +109,15 @@ EOL
 
 
 #Edit /etc/frr/zebra: add these lines
-cat > frr/zebra.conf <<EOL
+cat > /etc/frr/zebra.conf <<EOL
 hostname $HOSTNAME 
 log file /var/log/zebra.log
+!
+interface ${NIC_1}
+ ip address ${IP_1}/24
+!
+interface ${NIC_2}
+ ip address ${IP_2}/24 
 !
 interface ${NIC_LOCAL}
  ip address ${IP_LOCAL}/24
@@ -124,9 +125,18 @@ EOL
 
 
 
-cat > frr/ospfd.conf  <<EOL
-hostname $HOSTNAME
+
+cat > /etc/frr/ospfd.conf  <<EOL
+hostname $HOSTNAME 
 log file /var/log/ospfd.log
+!
+interface ${NIC_1}
+ ip ospf hello-interval 60
+ ip ospf dead-interval 240
+!
+interface ${NIC_2}
+ ip ospf hello-interval 60
+ ip ospf dead-interval 240
 !
 interface ${NIC_LOCAL}
  ip ospf hello-interval 60
@@ -146,10 +156,7 @@ router ospf
 line vty
 EOL
 
-#sudo systemctl daemon-reload
-#sudo systemctl start frr.service
-#/usr/libexec/frr/frrinit.sh start
+sudo systemctl daemon-reload
+sudo systemctl start frr.service
 
 } 2>&1 > frr_config.log  
-
-cd $cwd
