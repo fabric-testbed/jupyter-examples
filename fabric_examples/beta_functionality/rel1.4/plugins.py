@@ -19,6 +19,8 @@ class Plugins:
     @staticmethod
     def load():
         n = NetworkService
+        n.network_service_map["PortMirror"] = ServiceType.PortMirror
+        n.fim_l2network_service_types.append("PortMirror")
         n.change_public_ip = Plugins.change_public_ip
         n.new_l3network = Plugins.new_l3network
         n.new_network_service = Plugins.new_network_service
