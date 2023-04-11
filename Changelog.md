@@ -8,6 +8,7 @@ FABRIC testbed extensions changlog
 ### Added
 - FABLIB:  Show and list examples
 - FABLIB:  Graphical list examples
+- FABLIB:  DHCP example. More to be tentatively placed in the "misc" folder.
  
 ### Changed
  
