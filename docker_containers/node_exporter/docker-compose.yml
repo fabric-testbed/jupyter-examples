@@ -1,0 +1,16 @@
+version: '3'
+    
+services:
+  node-exporter:
+    image: prom/node-exporter:latest 
+    container_name: node-exporter 
+    privileged: true
+    network_mode: "bridge"
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    stdin_open: true
+    #volumes:
+    #  - /home/rocky:/home/fabric/host
+    restart: always
+    network_mode: service:fabric
