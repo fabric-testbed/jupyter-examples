@@ -11,13 +11,13 @@
   <key id="d0" for="node" attr.name="GraphID" attr.type="string" />
   <graph edgedefault="undirected">
     <node id="241">
-      <data key="d0">2b6b83bd-0c17-4d36-9c7e-1fccc7edb715</data>
+      <data key="d0">9a6800df-b19f-4f95-a439-e8e6541c3253</data>
       <data key="d1">NetworkNode</data>
-      <data key="d2">c5d88305-eaa6-41df-97e5-0c05781aae0e</data>
+      <data key="d2">ca0a5932-85f2-43ce-9d66-0c19d52153ac</data>
       <data key="d3">Node1</data>
       <data key="d4">VM</data>
       <data key="d5">false</data>
-      <data key="d6">FIU</data>
+      <data key="d6">CLEM</data>
       <data key="d7">{"core": 2, "disk": 10, "ram": 8}</data>
       <data key="d8">default_rocky_8,qcow2</data>
       <data key="d9">{"fablib_data": {"instantiated": "False", "run_update_commands": "False", "post_boot_commands": [], "post_update_commands": []}}</data>
