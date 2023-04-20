@@ -14,7 +14,7 @@ parser.add_argument("--site_name", help="Site to use for slice")
 
 KNIT6_notebooks = [
     "KNIT6_prepare_a_slice_via_images",
-    "KNIT6_instrumentize_a_slice"
+    "KNIT6_instrumentize_a_slice",
     "KNIT6_index",
     "KNIT6_prometheus_grafana",
     "KNIT6_elk_kibana"
