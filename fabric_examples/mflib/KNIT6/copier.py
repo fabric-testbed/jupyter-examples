@@ -45,7 +45,7 @@ def create_experiment_directory( dst_dir, slice_name, notebooks=KNIT6_notebooks 
     
     for notebook in notebooks:
         copy_notebook(src_dir, dst_dir, f"{notebook}.ipynb")
-    copy_edit_notebook(src_dir, dst_dir, "common_imports.ipynb", slice_name)
+    copy_edit_notebook(src_dir, dst_dir, "KNIT6_common_imports.ipynb", slice_name)
 
     # copy dashboards 
     dash_src = "../dashboard_examples"
