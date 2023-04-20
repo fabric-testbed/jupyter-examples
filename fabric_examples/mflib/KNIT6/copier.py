@@ -1,6 +1,7 @@
 import json
 import argparse
 import os
+import shutil
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -40,6 +41,11 @@ def create_experiment_directory( dst_dir, slice_name, notebooks=KNIT6_notebooks 
     for notebook in notebooks:
         copy_notebook(src_dir, dst_dir, f"{notebook}.ipynb")
     copy_edit_notebook(src_dir, dst_dir, "common_imports.ipynb", slice_name)
+
+    # copy dashboards 
+    dash_src = "../dashboard_examples"
+    dash_dst = os.join(dst_dir, "dashboard_examples")
+    shutil.copytree(dash_src, dash_dst)
 
 def copy_notebook(src_dir, dst_dir, notebook_name):
     notebook_json = load_notebook(os.path.join(src_dir, notebook_name))
