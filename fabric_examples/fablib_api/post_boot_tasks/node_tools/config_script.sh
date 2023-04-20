@@ -1,3 +1,5 @@
 #!/bin/bash
 
-sudo dnf install -y tcpdump vim
+echo "Hello, FABRIC" > post_boot_output.txt
+
+sudo dnf install -y tcpdump
