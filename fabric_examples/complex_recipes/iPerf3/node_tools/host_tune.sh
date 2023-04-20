@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#dev=$1
-#echo dev $dev
-
-# Already added to the docker image
-#sudo dnf install -y iproute-tc
-
 # Linux host tuning from https://fasterdata.es.net/host-tuning/linux/
 cat >> /etc/sysctl.conf <<EOL
 # allow testing with buffers up to 128MB
@@ -25,17 +19,7 @@ EOL
 
 sysctl --system
 
+# Turn on jumbo frames
 for dev in `basename -a /sys/class/net/*`; do
-    # Turn on jumbo frames
     ip link set dev $dev mtu 9000
 done
-
-
-#tc qdisc add dev $dev root fq maxrate 30gbit
-
-# increase TCP max buffer size setable using setsockopt()
-#net.core.rmem_max = 536870912
-#net.core.wmem_max = 536870912
-# increase Linux autotuning TCP buffer limit
-#net.ipv4.tcp_rmem = 4096 87380 536870912
-#net.ipv4.tcp_wmem = 4096 65536 536870912
