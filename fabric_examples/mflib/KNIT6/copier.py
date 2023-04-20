@@ -22,8 +22,13 @@ KNIT6_notebooks = [
     "KNIT6_elk_kibana",
     "KNIT6_mfvis_jupyternotebook_graphs",
     "KNIT6_mfvis_graph_downloading",
-#    "KNIT6_",
-
+    "KNIT6_mf_timestamp_with_mflib",
+    "KNIT6_mf_timestamp_standalone",
+    "KNIT6_owl_mf", 
+    "KNIT6_owl-prep_PTPDocker_slice.ipynb",
+    "KNIT6_owl_docker.ipynb",
+    "KNIT6_owl_data_analysis.ipynb",
+    "KNIT6_owl_data_analysis_docker.ipynb"
     ]
 
 
@@ -44,7 +49,7 @@ def create_experiment_directory( dst_dir, slice_name, notebooks=KNIT6_notebooks 
 
     # copy dashboards 
     dash_src = "../dashboard_examples"
-    dash_dst = os.join(dst_dir, "dashboard_examples")
+    dash_dst = os.path.join(dst_dir, "dashboard_examples")
     shutil.copytree(dash_src, dash_dst)
 
 def copy_notebook(src_dir, dst_dir, notebook_name):
