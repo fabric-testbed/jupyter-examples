@@ -14,6 +14,7 @@ parser.add_argument("--site_name", help="Site to use for slice")
 
 KNIT6_notebooks = [
     "KNIT6_prepare_a_slice_via_images",
+    "KNIT6_instrumentize_a_slice"
     "KNIT6_index",
     "KNIT6_prometheus_grafana",
     "KNIT6_elk_kibana"
@@ -29,6 +30,7 @@ def create_experiment_directory( dst_dir, slice_name, notebooks=KNIT6_notebooks 
         print("Directory already Exists")
         return
     os.makedirs(dst_dir)
+    print(f"Created {dst_dir}")
     
     for notebook in notebooks:
         copy_notebook(src_dir, dst_dir, f"{notebook}.ipynb")
