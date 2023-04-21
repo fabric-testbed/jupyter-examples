@@ -14,7 +14,7 @@ parser.add_argument("-t", "--timing", action=argparse.BooleanOptionalAction, hel
 parser.add_argument("--site_name", help="Site to use for slice")
 
 KNIT6_notebooks = [
-    "KNIT6_index",
+    "KNIT6_INDEX",
     "KNIT6_mflib_version_check",
     "KNIT6_prepare_a_slice_via_images",
     "KNIT6_instrumentize_a_slice",
