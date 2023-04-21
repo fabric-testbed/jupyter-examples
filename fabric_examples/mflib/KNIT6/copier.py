@@ -25,10 +25,10 @@ KNIT6_notebooks = [
     "KNIT6_mf_timestamp_with_mflib",
     "KNIT6_mf_timestamp_standalone",
     "KNIT6_owl_mf", 
-    "KNIT6_owl-prep_PTPDocker_slice.ipynb",
-    "KNIT6_owl_docker.ipynb",
-    "KNIT6_owl_data_analysis.ipynb",
-    "KNIT6_owl_data_analysis_docker.ipynb"
+    "KNIT6_owl-prep_PTPDocker_slice",
+    "KNIT6_owl_docker",
+    "KNIT6_owl_data_analysis",
+    "KNIT6_owl_data_analysis_docker"
     ]
 
 
