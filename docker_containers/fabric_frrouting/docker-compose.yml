@@ -1,0 +1,17 @@
+version: '3'
+    
+services:
+  frrouting:
+    #image: frrouting/frr 
+    image: pruth/fabric-multitool-rockylinux8:latest 
+    container_name: frrouting
+    privileged: true
+    network_mode: "bridge"
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    stdin_open: true
+    volumes:
+      - /home/rocky/frr:/etc/frr
+    network_mode: container:fabric
+

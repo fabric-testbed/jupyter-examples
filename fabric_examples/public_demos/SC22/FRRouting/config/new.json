@@ -1,0 +1,82 @@
+{
+    "networks": [
+        {
+            "name": "dall",
+            "site": "DALL",
+            "subnet": "192.168.1.0/24",
+            "router": {
+                "name": "dall_router",
+                "facility": "FABRIC",
+                "network": "dall",
+                "ip": "192.168.1.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        },
+        {
+            "name": "salt",
+            "site": "SALT",
+            "subnet": "192.168.3.0/24",
+            "router": {
+                "name": "salt_router",
+                "facility": "FABRIC",
+                "network": "dall",
+                "ip": "192.168.2.1",
+                "cores": "8",
+                "ram": "32",
+                "disk": "10",
+                "static_routes": []
+            }
+        }
+    ],
+    "links": [
+        {
+            "name": "link1",
+            "subnet": "192.168.100.0/24",
+            "endpoints": [
+                {
+                    "router_name": "dall_router",
+                    "ip": "192.168.100.1"
+                },
+                {
+                    "router_name": "salt_router",
+                    "ip": "192.168.100.2"
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "node1",
+            "facility": "FABRIC",
+            "network": "dall",
+            "ip": "192.168.1.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.1.1"
+                ]
+            ]
+        },
+        {
+            "name": "node2",
+            "facility": "FABRIC",
+            "network": "salt",
+            "ip": "192.168.2.100",
+            "cores": "8",
+            "ram": "32",
+            "disk": "10",
+            "static_routes": [
+                [
+                    "192.168.0.0/16",
+                    "192.168.2.1"
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+version: '3'
+    
+services:
+  fabric-multitool:
+    image: pruth/fabric-multitool-rockylinux8:latest 
+    container_name: fabric
+    privileged: true
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    stdin_open: true
+    volumes:
+      - /home/rocky:/home/fabric/host
+

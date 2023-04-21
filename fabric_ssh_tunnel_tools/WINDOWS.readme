@@ -1,0 +1,11 @@
+
+In PowerShell "Run as Adminitrator"
+
+Execute:
+Set-ExecutionPolicy Unrestricted
+
+Run PowerShell
+
+cd to location of scripts
+
+tar -z
