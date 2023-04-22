@@ -6,17 +6,8 @@ scrape_configs:
   static_configs:
   - targets:
     - localhost:9090
-- job_name: OpenVSwitch7
+- job_name: MySliceNodeExporterTest1
   static_configs:
   - targets:
-    - 10.132.129.6:9100
-    - 10.132.129.3:9100
-    - 10.132.129.4:9100
-    - 10.132.129.5:9100
-    - 10.132.129.2:9100
-- job_name: OpenVSwitch6
-  static_configs:
-  - targets: []
-- job_name: PersistentStorageService
-  static_configs:
-  - targets: []
+    - 10.133.130.2:9100
+    - 10.130.138.2:9100
