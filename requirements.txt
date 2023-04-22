@@ -1,1 +1,3 @@
-fabrictestbed-extensions==1.4.1
+fabrictestbed-extensions==1.4.3
+python-dotenv
+ipython==8.12.0
