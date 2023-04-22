@@ -52,6 +52,9 @@ def create_experiment_directory( dst_dir, slice_name, notebooks=KNIT6_notebooks 
     dash_dst = os.path.join(dst_dir, "dashboard_examples")
     shutil.copytree(dash_src, dash_dst)
 
+    # copy fablib configuration
+    copy_notebook(os.path.join("..",".."), dst_dir, "configure.ipynb")
+
 def copy_notebook(src_dir, dst_dir, notebook_name):
     notebook_json = load_notebook(os.path.join(src_dir, notebook_name))
     # do no editing
