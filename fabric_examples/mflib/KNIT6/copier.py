@@ -28,7 +28,8 @@ KNIT6_notebooks = [
     "KNIT6_owl-prep_PTPDocker_slice",
     "KNIT6_owl_docker",
     "KNIT6_owl_data_analysis",
-    "KNIT6_owl_data_analysis_docker"
+    "KNIT6_owl_data_analysis_docker",
+    "KNIT6_clean_up"
     ]
 
 
