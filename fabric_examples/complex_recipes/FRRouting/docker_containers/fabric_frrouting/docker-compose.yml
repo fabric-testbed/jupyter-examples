@@ -4,7 +4,7 @@ services:
   frrouting:
     image: frrouting/frr 
     #image: pruth/fabric-multitool-rockylinux8:latest 
-    container_name: frrouting
+    container_name: fabric
     privileged: true
     cap_add:
       - NET_ADMIN
