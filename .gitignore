@@ -135,3 +135,8 @@ dmypy.json
 #PyCharm
 .idea/
 
+# Notebook Cleaning
+.pre-commit-config.yaml
+
+# Mac Desktop Files
+.DS_Store
