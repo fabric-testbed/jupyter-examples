@@ -21,15 +21,16 @@ class Plugins:
         n = NetworkService
         n.network_service_map["PortMirror"] = ServiceType.PortMirror
         n.fim_l2network_service_types.append("PortMirror")
+        
         n.change_public_ip = Plugins.change_public_ip
         n.new_l3network = Plugins.new_l3network
         n.new_network_service = Plugins.new_network_service
+        
         s = Slice
         s.add_facility_port = Plugins.add_facility_port
         s.add_l3network = Plugins.add_l3network
         f = FacilityPort
         f.new_facility_port = Plugins.new_facility_port
-
         
     
     def change_public_ip(self, ipv6: list[str] = None, ipv4: list[str] = None):
@@ -109,10 +110,11 @@ class Plugins:
         slice: Slice = None,
         name: str = None,
         nstype: ServiceType = None,
-        interfaces: List[Interface] = [],technology: str = None
+        interfaces: List[Interface] = [],
+        user_data: dict = {}, technology: str = None
     ):
         """
-        Not inteded for API use. See slice.add_l2network
+        Not intended for API use. See slice.add_l2network
 
 
         Creates a new FABRIC network service and returns the fablib instance.
@@ -138,4 +140,10 @@ class Plugins:
             name=name, nstype=nstype, interfaces=fim_interfaces, technology=technology
         )
 
-        return NetworkService(slice=slice, fim_network_service=fim_network_service)    
+        network_service = NetworkService(
+            slice=slice, fim_network_service=fim_network_service
+        )
+        network_service.set_user_data(user_data)
+        network_service.init_fablib_data()
+
+        return network_service
