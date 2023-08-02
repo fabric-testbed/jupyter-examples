@@ -1,4 +1,4 @@
-fabrictestbed-extensions==1.5.0
+fabrictestbed-extensions==1.5.2
 python-dotenv
 ipython==8.12.0
 fabrictestbed-mflib>=1.0.0
