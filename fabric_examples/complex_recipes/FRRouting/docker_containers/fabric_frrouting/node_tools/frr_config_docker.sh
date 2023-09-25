@@ -15,6 +15,12 @@ HOSTNAME=$(hostname)
 
 {
 
+echo NIC_LOCAL $NIC_LOCAL
+echo IP_LOCAL $IP_LOCAL
+echo SUBNET_ALL $SUBNET_ALL
+
+HOSTNAME=$(hostname)
+
 #sudo dnf install -y vim tcpdump frr
 sudo sysctl -w net.ipv4.ip_forward=1
 
