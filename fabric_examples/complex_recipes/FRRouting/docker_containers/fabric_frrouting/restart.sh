@@ -1,6 +1,6 @@
 #!/bin/bash
 
-devs=$@
+#devs=$@
 
 cwd=`pwd`
 
@@ -8,12 +8,15 @@ path=$(dirname "$0")
 
 echo $path
 
-echo $devs > ${path}/devs
+devs=`cat ${path}/devs`
 
 
-${path}/node_tools/save_iface_config.py -d ${path}/ip_config/ifaces $devs 
-${path}/node_tools/save_route_config.py -d ${path}/ip_config/routes -f routes.json 
-cd ${path}; docker compose up -d ; cd $cwd
+#exit
+
+#${path}/node_tools/save_iface_config.py -d ${path}/ip_config/ifaces $devs 
+#${path}/node_tools/save_route_config.py -d ${path}/ip_config/routes -f routes.json 
+#cd ${path}; docker compose up -d ; cd $cwd
+docker start fabric
 sudo ${path}/node_tools/config_netns.py -c fabric -n fabric 
 sudo ${path}/node_tools/set_netns_ifaces.py -n fabric $devs
 sudo ip netns exec fabric  ${path}/node_tools/config_ifaces.py ${path}/ip_config/ifaces/*.json 

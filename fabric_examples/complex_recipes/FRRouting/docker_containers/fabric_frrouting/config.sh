@@ -2,7 +2,7 @@
 
 cwd=`pwd`
 
-path=$(dirname "$0")/..
+path=$(dirname "$0")
 
 cd $path
 
