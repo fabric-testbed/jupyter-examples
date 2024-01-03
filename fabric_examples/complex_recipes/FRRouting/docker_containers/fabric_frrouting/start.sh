@@ -8,12 +8,15 @@ path=$(dirname "$0")
 
 echo $path
 
+echo $devs > ${path}/devs
+
+
 ${path}/node_tools/save_iface_config.py -d ${path}/ip_config/ifaces $devs 
 ${path}/node_tools/save_route_config.py -d ${path}/ip_config/routes -f routes.json 
 cd ${path}; docker compose up -d ; cd $cwd
 sudo ${path}/node_tools/config_netns.py -c fabric -n fabric 
 sudo ${path}/node_tools/set_netns_ifaces.py -n fabric $devs
-sudo ip netns exec fabric  ${path}/node_tools/config_ifaces.py ${path}/ip_config/ifaces/eth*.json 
+sudo ip netns exec fabric  ${path}/node_tools/config_ifaces.py ${path}/ip_config/ifaces/*.json 
 sudo ip netns exec fabric  ${path}/node_tools/config_routes.py ${path}/ip_config/routes/routes.json
 sudo ip netns exec fabric  ${path}/node_tools/host_tune.sh 
 
