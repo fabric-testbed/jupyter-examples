@@ -1,24 +1,20 @@
 # Contributing to Jupyter Examples
 
-Thank you for considering to help FABRIC Jupyter Examples!  We welcome contributions in
-the form of bug reports, feature requests, code patches, documentation
-updates, and anything else that may be helpful.  Please review these
-guidelines first.
+We invite contributions from the community to enrich and broaden the collection of Jupyter Notebook examples. If you have an example or tutorial you'd like to contribute, kindly follow these steps:
 
-Jupyter Examples are developed on its GitHub [repository], and uses GitHub issues
-and pull requests.
+- Fork the repository.
+- Create a new branch dedicated to your feature or fix.
+- Develop and thoroughly test your changes locally.
+- Commit your changes with clear and descriptive commit messages. Please ensure to use signed commits.
+- Push your changes to your fork.
+- Open a pull request against the main branch of the [repository].
 
+- Please make sure that your contributions align with the overarching goals and guidelines of the Fabric Testbed project.
 
 ## Submitting Issues
 
-If you want to add a new examples or report that something is
-broken, please submit an issue via GitHub.  If you find a bug, please
-describe it in enough detail so that we can quickly reproduce them.
-
+If you wish to propose new examples or report any issues, please submit an issue via GitHub. If you encounter a bug, kindly describe it in sufficient detail for us to swiftly reproduce the issue.
 
 ## Submitting Pull Requests
 
-Contributions to Jupyter Examples are made with GitHub Pull Requests. 
-FABRIC project has a policy of requiring GPG signed commits. 
-Commits on the PR branch will be checked to ensure that they are signed.
-Signed commits are mandatory for a PR to be approved and merged.
+Contributions to Jupyter Examples are facilitated through GitHub Pull Requests. The FABRIC project adheres to a policy of requiring GPG-signed commits. Commits on the PR branch will be scrutinized to ensure they are signed. Signed commits are compulsory for a PR to be reviewed, approved, and merged.
