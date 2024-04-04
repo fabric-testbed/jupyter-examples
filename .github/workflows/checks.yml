@@ -1,0 +1,35 @@
+# Run some code checks with GitHub Actions.
+
+name: Code checks
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+  pull_request_target:
+
+permissions:
+  contents: read
+  # Allow 1Password/check-signed-commits-action to leave comments on
+  # pull requests.
+  pull-requests: write
+
+jobs:
+
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # since we need to diff against origin/main.
+
+      # https://github.com/marketplace/actions/check-signed-commits-in-pr
+      # runs on pull_request_target and pull_request events, but
+      # pull_request_target is preferred because of the ability to
+      # leave comments on external PRs created from forks.
+      - name: Check that commits are signed
+        if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+        uses: 1Password/check-signed-commits-action@v1
+
