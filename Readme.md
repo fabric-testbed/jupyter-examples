@@ -16,6 +16,8 @@ including:
 - Configuration Management: Examples showcasing how to configure network devices and services within the Fabric Testbed environment.
 - Experimentation and Analysis: Examples illustrating how to conduct experiments and analyze network performance and behavior using Fabric Testbed resources.
 
+More details available in the [Start Here Notebook](./start_here.ipynb)
+
 ## Getting Started
 
 The easiest way to create experiments on FABRIC is using JupyterHub. 
