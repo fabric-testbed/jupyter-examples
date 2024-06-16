@@ -1,0 +1,17 @@
+services:
+  filebrowser:
+    container_name: filebrowser
+    image: filebrowser/filebrowser
+    user: 1000:1000
+    ports:
+      - 8989:8989
+    volumes:
+      - /home/ubuntu:/srv
+      - /home/ubuntu/filebrowser/config:/config
+    environment:
+      - FB_BASEURL=/filebrowser
+      - FB_PORT=8989
+      - FB_DATABASE=/config/filebrowser.db
+    cap_add:  
+        - net_admin
+        - net_raw
