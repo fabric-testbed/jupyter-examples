@@ -260,7 +260,7 @@
         "title": "Wide Area Link (Layer 2) - auto, manual, ERO or user defined",
         "description_short": "Create a private WAN Ethernet link between FABRIC sites",
         "description_long": "Create a private WAN Ethernet link between FABRIC sites with three configuration options - auto, manual, explicit route options(ERO) or user defined",
-        "location": "fabric_examples/fablib_api/create_l2network_basic",
+        "location": "fabric_examples/fablib_api/create_l2network_wide_area",
         "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[

@@ -40,7 +40,7 @@ elif [[ $image == "default_ubuntu_22" ]]; then
     sudo systemctl start openvswitch-switch 
     sudo systemctl status openvswitch-switch 
     sudo systemctl enable --now openvswitch-switch 
-    sudo apt-get install -y  build-essential checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev wget tcpdump iftop python3-pip 
+    sudo apt-get install -y  build-essential checkinstall libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev wget tcpdump iftop python3-pip 
     python3 -m pip install docker rpyc --user 
 elif [[ $image == "default_rocky_8" ]]; then
     sudo dnf install -y epel-release 
@@ -55,6 +55,25 @@ elif [[ $image == "default_rocky_8" ]]; then
     pip3.9 install docker rpyc --user 
     sudo systemctl enable --now openvswitch 
     sudo sysctl --system 
+    sudo firewall-cmd --zone=public --add-port=5201/tcp --permanent
+    sudo firewall-cmd --zone=public --add-port=5201/udp --permanent
+    sudo firewall-cmd --reload
+elif [[ $image == "default_rocky_9" ]]; then
+    sudo dnf install -y epel-release 
+    sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 
+    sudo dnf install -y docker-ce docker-ce-cli containerd.io 
+    sudo mkdir -p /etc/docker 
+    sudo cp ${script_dir}/docker/daemon.json /etc/docker/daemon.json 
+    sudo systemctl start docker 
+    sudo usermod -aG docker rocky
+    sudo dnf install -y centos-release-nfv-openvswitch 
+    sudo dnf install -y openvswitch3.3 libibverbs tcpdump net-tools python vim iftop
+    pip3.9 install docker rpyc --user 
+    sudo systemctl enable --now openvswitch 
+    sudo sysctl --system 
+    sudo firewall-cmd --zone=public --add-port=5201/tcp --permanent
+    sudo firewall-cmd --zone=public --add-port=5201/udp --permanent
+    sudo firewall-cmd --reload
 elif [[ $image == "docker_ubuntu_20"  ]]; then
     sudo usermod -aG docker ubuntu
 elif [[ $image == "docker_ubuntu_22"  ]]; then
@@ -62,6 +81,15 @@ elif [[ $image == "docker_ubuntu_22"  ]]; then
 elif [[ $image == "docker_rocky_8"  ]]; then
     sudo systemctl start docker 
     sudo usermod -aG docker rocky
+    sudo firewall-cmd --zone=public --add-port=5201/tcp --permanent
+    sudo firewall-cmd --zone=public --add-port=5201/udp --permanent
+    sudo firewall-cmd --reload
+elif [[ $image == "docker_rocky_9"  ]]; then
+    sudo systemctl start docker 
+    sudo usermod -aG docker rocky
+    sudo firewall-cmd --zone=public --add-port=5201/tcp --permanent
+    sudo firewall-cmd --zone=public --add-port=5201/udp --permanent
+    sudo firewall-cmd --reload
 else
     echo invalid image type $image  
 fi
