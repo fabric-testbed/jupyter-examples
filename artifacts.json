@@ -1,32 +1,32 @@
 {
     "configure_and_validate": {
-        "title": "FABRIC Example: Configure Environment",
+        "title": "Configure Environment",
         "description_short": "Configure you Environment including creating the `fabric_rc` and `ssh_config` files.",
         "description_long": "",
         "location": "configure_and_validate",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "hello_fabric": {
-        "title": "FABRIC Example: Hello, FABRIC",
+        "title": "Hello, FABRIC",
         "description_short": "Simple First Slice Example.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/hello_fabric",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "list_all_resources": {
-        "title": "FABRIC Example: Listing Available Resources",
+        "title": "Listing Available Resources",
         "description_short": "List resource capacity and availability. Output options: Text, Pandas, JSON, and Python List[Dict]. Find sites containing available components and capacities.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/sites_and_resources",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -34,11 +34,11 @@
         ]
     },
     "create_slice": {
-        "title": "FABRIC Example: Validate and Submit a Slice",
+        "title": "Validate and Submit a Slice",
         "description_short": "Options that can be used when creating, validating, and submitting current or future slices.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/create_slice",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -46,22 +46,22 @@
         ]
     },
     "delete_slice": {
-        "title": "FABRIC Example: Delete Slice(s)",
+        "title": "Delete Slice(s)",
         "description_short": "Options for deleting a slice or slices.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/delete_slice",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "list_slices": {
-        "title": "FABRIC Example: List All Slice(s), Slice's Nodes, Networks, Components, and Interfaces",
+        "title": "List All Slice(s), Slice's Nodes, Networks, Components, and Interfaces",
         "description_short": "Options for listing slice(s).",
         "description_long": "Find and list parts of slice(s).",
         "location": "fabric_examples/fablib_api/slices",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -69,11 +69,11 @@
         ]
     },
     "renew_slice": {
-        "title": "FABRIC Example: Extending a Slice Reservation",
+        "title": "Extending a Slice Reservation",
         "description_short": "Extend a slice reservation for a longer period of time.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/renew_slice",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -81,308 +81,308 @@
         ]
     },
     "save_and_load": {
-        "title": "FABRIC Example: Save/Load Slices",
+        "title": "Save/Load Slices",
         "description_short": "Save an experimental topology and load it at a later time.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/save_and_load",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "ssh_keys": {
-        "title": "FABRIC Example: Add/Remove SSH Keys",
+        "title": "Add/Remove SSH Keys",
         "description_short": "Add/Remove SSH Keys to VMs in your slice.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/ssh_keys",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "slice_sharing": {
-        "title": "FABRIC Example: Share Slices",
+        "title": "Share Slices",
         "description_short": "Collaborative Slice Access between project members.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/slice_sharing",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "modify_slice": {
-        "title": "FABRIC Example: Modifying Slices",
+        "title": "Modifying Slices",
         "description_short": "Modify an existing slice by adding/removing resources.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/modify_slice",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "customizing_nodes": {
-        "title": "FABRIC Example: Customizing Nodes",
+        "title": "Customizing Nodes",
         "description_short": "Set node properties (site, image, cores, ram, disk, etc.).",
         "description_long": "",
         "location": "fabric_examples/fablib_api/customizing_nodes",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "ssh_to_nodes": {
-        "title": "FABRIC Example: Execute Commands on Nodes",
+        "title": "Execute Commands on Nodes",
         "description_short": "Show how to remotely log into a running FABRIC node.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/ssh_to_nodes",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "ssh_tunnels": {
-        "title": "FABRIC Example: SSH Tunnels",
+        "title": "SSH Tunnels",
         "description_short": "Create SSH tunnels from your local machine (i.e., your laptop) to FABRIC Nodes.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/ssh_tunnels",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "local_disk": {
-        "title": "FABRIC Example: Local Disk",
+        "title": "Local Disk",
         "description_short": "Create a node with a custom local disk size.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/local_disk",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "basic_nvme_devices": {
-        "title": "FABRIC Example: NVMe Devices",
+        "title": "NVMe Devices",
         "description_short": "Create a node with an NVMe device.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/basic_nvme_devices",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "persistent_storage": {
-        "title": "FABRIC Example: Persistent Storage",
+        "title": "Persistent Storage",
         "description_short": "Connect to your project's persistent storage volume.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/persistent_storage",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "fabric_all_gpus": {
-        "title": "FABRIC Example: All FABRIC GPUs: Tesla T4, RTX6000, A30, A40",
+        "title": "All FABRIC GPUs: Tesla T4, RTX6000, A30, A40",
         "description_short": "Create a node with any GPU type.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/fabric_all_gpus",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "create_l3network_fabnet_ipv4": {
-        "title": "FABRIC Example: FABNet IPv4 (Layer 3)",
+        "title": "FABNet IPv4 (Layer 3)",
         "description_short": "Connect to FABRIC's IPv4 internet",
         "description_long": "Connect to FABRIC's IPv4 internet with three configuration options - auto, manual or user defined.",
         "location": "fabric_examples/fablib_api/create_l3network_fabnet_ipv4",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "create_l3network_fabnet_ipv4_ext": {
-        "title": "FABRIC Example: FABNet IPv4 Ext (Layer 3)",
+        "title": "FABNet IPv4 Ext (Layer 3)",
         "description_short": "Connect to FABRIC's IPv4 internet with external access",
         "description_long": "",
         "location": "fabric_examples/fablib_api/create_l3network_fabnet_ipv4ext_manual",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "create_l3network_fabnet_ipv6": {
-        "title": "FABRIC Example: FABNet IPv6 (Layer 3)",
+        "title": "FABNet IPv6 (Layer 3)",
         "description_short": "Connect to FABRIC's IPv6 internet",
         "description_long": "Connect to FABRIC's IPv6 internet with three configuration options - auto, manual or user defined",
         "location": "fabric_examples/fablib_api/create_l3network_fabnet_ipv6",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "create_l3network_fabnet_ipv6_ext": {
-        "title": "FABRIC Example: FABNet IPv6 Ext (Layer 3)",
+        "title": "FABNet IPv6 Ext (Layer 3)",
         "description_short": "Connect to FABRIC's IPv6 internet with external access",
         "description_long": "",
         "location": "fabric_examples/fablib_api/create_l3network_fabnet_ipv6ext_manual",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "create_l2network_basic": {
-        "title": "FABRIC Example: Local Ethernet (Layer 2)",
+        "title": "Local Ethernet (Layer 2)",
         "description_short": "Create a private local Ethernet network on a FABRIC site",
         "description_long": "Create a private local Ethernet network on a FABRIC site with three configuration options - auto, manual or user defined",
         "location": "fabric_examples/fablib_api/create_l2network_basic",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "create_l2network_wide_area": {
-        "title": "FABRIC Example: Wide Area Link (Layer 2)",
+        "title": "Wide Area Link (Layer 2) - auto, manual, ERO or user defined",
         "description_short": "Create a private WAN Ethernet link between FABRIC sites",
-        "description_long": "Create a private WAN Ethernet link between FABRIC sites with three configuration options - auto, manual or user defined",
-        "location": "fabric_examples/fablib_api/create_l2network_basic",
-        "tags": ["fabric", "tutorial"],
+        "description_long": "Create a private WAN Ethernet link between FABRIC sites with three configuration options - auto, manual, explicit route options(ERO) or user defined",
+        "location": "fabric_examples/fablib_api/create_l2network_wide_area",
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "create_port_mirror": {
-        "title": "FABRIC Example: Port Mirroring",
+        "title": "Port Mirroring",
         "description_short": "Listen in on traffic in FABRIC dataplane using PortMirror service",
         "description_long": "Listen in on traffic in FABRIC dataplane using PortMirror service - Infrastructure Port Mirroring or InSlice Port Mirroring",
         "location": "fabric_examples/fablib_api/create_port_mirror",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "sub_interfaces": {
-        "title": "FABRIC Example: Sub Interfaces",
+        "title": "Sub Interfaces",
         "description_short": "Create VLAN-tagged sub-interfaces for Smart NICs, enabling multiple Network Services connections.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/sub_interfaces",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "fabric_fpgas": {
-        "title": "FABRIC Example: Provision a single FPGA and/or configure it using ESnet workflow",
+        "title": "Provision a single FPGA and/or configure it using ESnet workflow",
         "description_short": "Provision a single FPGA and/or configure it using ESnet workflow.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/fabric_fpgas",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "upload_and_execute": {
-        "title": "FABRIC Example: Upload and Execute Scripts",
+        "title": "Upload and Execute Scripts",
         "description_short": "Upload a script and execute it.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/upload_and_execute",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "parallel_config": {
-        "title": "FABRIC Example: Parallel Experiment Configuration",
+        "title": "Parallel Experiment Configuration",
         "description_short": "Use threads to configure experiments in parallel.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/parallel_config",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "post_boot_tasks": {
-        "title": "FABRIC Example: Post Boot Tasks",
+        "title": "Post Boot Tasks",
         "description_short": "Define post boot tasks with or without templates to upload files and execute commands.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/post_boot_tasks",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "docker_containers": {
-        "title": "FABRIC Example: Deploy Docker Containers",
+        "title": "Deploy Docker Containers",
         "description_short": "Docker",
         "description_long": "",
         "location": "fabric_examples/fablib_api/docker_containers",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "add_keys_into_slice": {
-        "title": "FABRIC Example: Adding other user's keys into slice",
+        "title": "Adding other user's keys into slice",
         "description_short": "Add new keys on submit or add later via POA (Perform Operational Action).",
         "description_long": "",
         "location": "fabric_examples/fablib_api/other_ssh_keys",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "FRRouting": {
-        "title": "FABRIC Example: FRRouting OSPF",
+        "title": "FRRouting OSPF",
         "description_short": "Example of deploying OSPF across a wide-area using FRRouting (similar to Quagga).",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/FRRouting",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "openvswitch": {
-        "title": "FABRIC Example: OpenVSwitch",
+        "title": "OpenVSwitch",
         "description_short": "Example of deploying OpenVSwitch in a node.",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/openvswitch",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "iperf3": {
-        "title": "FABRIC Example: iPerf3",
+        "title": "iPerf3",
         "description_short": "Test bandwidth across your FABRIC slice.",
         "description_long": "Test bandwidth across your FABRIC slice. Apply CPU Pinning and Numa tuning with NIC_Basic or Smart NICs and test bandwidth across your FABRIC slice.",
         "location": "fabric_examples/complex_recipes/iPerf3",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -390,22 +390,22 @@
         ]
     },
     "dpdk_smart_nic": {
-        "title": "FABRIC Example: DPDK and Pktgen with Smart NICs",
+        "title": "DPDK and Pktgen with Smart NICs",
         "description_short": "Program your smart nics with DPDK.",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/networking/programmable_networking/dpdk_smart_nic",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kthare10@email.unc.edu"
         ]
     },
     "peering_client": {
-        "title": "FABRIC Example: Peering Client",
+        "title": "Peering Client",
         "description_short": "Setting up a PEERING client on FABRIC",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/networking/peering_client",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "lom2019@ufmg.br",
@@ -413,55 +413,55 @@
         ]
     },
     "grafana_prometheus_servers": {
-        "title": "FABRIC Example: Measuring and Visualizing with Grafana and Prometheus",
+        "title": "Measuring and Visualizing with Grafana and Prometheus",
         "description_short": "Deploy a Grafana/Prometheus services on a FABIRC node using Docker. Create a slice that can be monitored by a Grafana/Prometheus server.",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/grafana_prometheus_servers",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "kubernetes": {
-        "title": "FABRIC Example: Kubernetes Cluster",
+        "title": "Kubernetes Cluster",
         "description_short": "Create a private Kubernetes cluster on FABRIC resources.",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/kubernetes",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "tailscale": {
-        "title": "FABRIC Example: Tailscale Mesh VPN",
+        "title": "Tailscale Mesh VPN",
         "description_short": "Create a private mesh VPN with [Tailscale](http://tailscale.com) to accesss and manage your slice.",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/tailscale",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "p4_labs_bmv2": {
-        "title": "FABRIC Example: P4 Labs (BMv2)",
+        "title": "P4 Labs (BMv2)",
         "description_short": "Lab series on P4 programmable switches using the Behavioral Model (BMv2).",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/p4_labs_bmv2",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "ekfoury@email.sc.edu"
         ]
     },
     "public_demos": {
-        "title": "FABRIC Example: Demos and Tutorials",
-        "description_short": "Files for live demos and tutorials.",
+        "title": "Demos and Tutorials",
+        "description_short": "Files for live demos and examples.",
         "description_long": "",
         "location": "fabric_examples/public_demos",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu",
@@ -469,33 +469,44 @@
         ]
     },
     "Chameleon_Facility_Port": {
-        "title": "FABRIC Example: Chameleon Facility Ports",
+        "title": "Chameleon Facility Ports",
         "description_short": "Create slices spanning Chameleon and FABRIC via Layer 2 or Layer 3",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/Chameleon_Facility_Port",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "pruth@email.unc.edu"
         ]
     },
     "Cloudlab_Facility_Port": {
-        "title": "FABRIC Example: CloudLab Facility Ports",
+        "title": "CloudLab Facility Ports",
         "description_short": "Create slices spanning Cloud Lab and FABRIC via Layer 2",
         "description_long": "",
         "location": "fabric_examples/complex_recipes/Cloudlab_Facility_Port",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "kissel@es.net"
         ]
     },
+    "owl": {
+        "title": "One-Way Latency (OWL) Measurements",
+        "description_short": "Example for setting up One-Way Latency (OWL) Measurements.",
+        "description_long": "",
+        "location": "./fabric_examples/complex_recipes/owl",
+        "tags": ["fabric", "example"],
+        "visibility": "public",
+        "authors":[
+            "mami.hayashida@uky.edu"
+        ]
+    },
     "mflib": {
-        "title": "FABRIC Example: Monitoring with MFLib Examples",
+        "title": "Monitoring with MFLib Examples",
         "description_short": "Examples for setting up automated monitoring in your slice.",
         "description_long": "",
         "location": "fabric_examples/mflib",
-        "tags": ["fabric", "tutorial"],
+        "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
             "hussam.nasir@uky.edu",
