@@ -515,5 +515,16 @@
             "mami.hayashida@uky.edu",
             "pinyi.shi@uky.edu"
         ]
+    },
+    "bluefields": {
+        "title": "BlueField SmartNICs",
+        "description_short": "Create a slice using BlueField-2 Smart NICs.",
+        "description_long": "",
+        "location": "fabric_examples/fablib_api/bluefields",
+        "tags": ["fabric", "example"],
+        "visibility": "public",
+        "authors":[
+            "kthare10@renci.org"
+        ]
     }
 }
