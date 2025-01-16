@@ -34,7 +34,7 @@
         ]
     },
     "create_slice": {
-        "title": "Validate and Submit a Slice",
+        "title": "Validate and Submit a Slice with Advanced Scheduling Options",
         "description_short": "Options that can be used when creating, validating, and submitting current or future slices.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/create_slice",
@@ -499,6 +499,17 @@
         "visibility": "public",
         "authors":[
             "mami.hayashida@uky.edu"
+        ]
+    },
+    "p4_switches": {
+        "title": "P4 Switches",
+        "description_short": "Create a P4 slice using Tofino switches.",
+        "description_long": "",
+        "location": "fabric_examples/fablib_api/fabric_p4_tofino_l2_network",
+        "tags": ["fabric", "example"],
+        "visibility": "public",
+        "authors":[
+            "kthare10@renci.org"
         ]
     },
     "mflib": {
