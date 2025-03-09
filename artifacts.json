@@ -509,7 +509,7 @@
         "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
-            "kthare10@renci.org"
+            "kthare10@email.unc.edu"
         ]
     },
     "mflib": {
@@ -535,7 +535,29 @@
         "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
-            "kthare10@renci.org"
+            "kthare10@email.unc.edu"
+        ]
+    },
+    "collaborative_slices": {
+        "title": "FABRIC Collaborative Slices: Ollama & Open vSwitch Deployment",
+            "description_short": "Deploy and connect FABRIC slices running Ollama for AI processing and Open vSwitch for network control.",
+        "description_long": "This artifact provides a structured approach to deploying and connecting two slices within the FABRIC testbed: one running the Ollama service with an LLM model (defaulting to deepseek-r1:7b, configurable via the .env file) and the other using Open vSwitch for network management. It includes Jupyter notebooks guiding users through site selection, container deployment, network configuration, and connectivity verification. This setup enables experimentation with multi-slice integrations, combining AI processing with advanced network control.",
+        "location": "fabric_examples/complex_recipes/collaborative_slices",
+        "tags": ["fabric", "example", "tutorial", "experiment", "experiment pattern", "reproducible research"],
+        "visibility": "public",
+        "authors":[
+            "kthare10@email.unc.edu"
+        ]
+    },
+    "llm_inference": {
+        "title": "Deploying Ollama for LLM Inference on FABRIC",
+        "description_short": "This artifact provides an example of deploying an Ollama slice on FABRIC for running large language models (LLMs). It includes setup instructions, Jupyter notebooks, and configuration files to launch an Ollama node, deploy LLM services, and run queries.",
+        "description_long": "This artifact provides resources for deploying an Ollama slice on FABRIC, enabling the execution of large language models (LLMs). It includes Jupyter notebooks and configuration files to: Launch an Ollama node with a GPU. Deploy ollama and open-webui as Docker containers. Load a default LLM (deepseek-r1:7b), with the option to configure other models. Retrieve the FabNet IP for external access. Demonstrate running queries against the LLM on FABRIC. This serves as an example of utilizing FABRIC for AI workloads and experimenting with LLM inference in a distributed testbed environment.",
+        "location": "fabric_examples/complex_recipes/collaborative_slices/ollama",
+        "tags": ["fabric", "example", "tutorial", "experiment", "experiment pattern", "reproducible research"],
+        "visibility": "public",
+        "authors":[
+            "kthare10@email.unc.edu"
         ]
     }
 }
