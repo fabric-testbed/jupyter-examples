@@ -102,11 +102,11 @@
             "kthare10@email.unc.edu"
         ]
     },
-    "slice_sharing": {
+    "list_project_slices": {
         "title": "List Project Slices",
         "description_short": "List all slice in your project.",
         "description_long": "",
-        "location": "fabric_examples/fablib_api/slice_sharing",
+        "location": "fabric_examples/fablib_api/list_project_slices",
         "tags": ["fabric", "example"],
         "visibility": "public",
         "authors":[
