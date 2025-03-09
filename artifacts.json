@@ -93,7 +93,7 @@
     },
     "ssh_keys": {
         "title": "Add/Remove SSH Keys",
-        "description_short": "Add/Remove SSH Keys to VMs in your slice.",
+        "description_short": "Manage SSH keys for yourself and collaborators to grant or revoke access to your slice nodes.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/ssh_keys",
         "tags": ["fabric", "example"],
@@ -103,8 +103,8 @@
         ]
     },
     "slice_sharing": {
-        "title": "Share Slices",
-        "description_short": "Collaborative Slice Access between project members.",
+        "title": "List Project Slices",
+        "description_short": "List all slice in your project.",
         "description_long": "",
         "location": "fabric_examples/fablib_api/slice_sharing",
         "tags": ["fabric", "example"],
