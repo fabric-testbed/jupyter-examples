@@ -96,7 +96,7 @@
         "description_short": "Manage SSH keys and list available slices to collaborate within a FABRIC project.",
         "description_long": "This artifact provides a structured approach to collaborating on FABRIC slices. It includes functionality for listing available slices in a project, accessing a collaborator’s slice, and managing SSH key access for granting or revoking permissions. Users can explore and retrieve shared slices while securely modifying access control using SSH key management.",
         "location": "fabric_examples/fablib_api/share_slices",
-        "tags": ["fabric", "example", "collaboration", "ssh", "slices", "access"],
+        "tags": ["fabric", "example", "tutorial"],
         "visibility": "public",
         "authors": [
             "kthare10@email.unc.edu"
