@@ -91,25 +91,14 @@
             "pruth@email.unc.edu"
         ]
     },
-    "ssh_keys": {
-        "title": "Add/Remove SSH Keys",
-        "description_short": "Manage SSH keys for yourself and collaborators to grant or revoke access to your slice nodes.",
-        "description_long": "",
-        "location": "fabric_examples/fablib_api/ssh_keys",
-        "tags": ["fabric", "example"],
+    "share_slices": {
+        "title": "Share Slices: Manage Access & List Slices",
+        "description_short": "Manage SSH keys and list available slices to collaborate within a FABRIC project.",
+        "description_long": "This artifact provides a structured approach to collaborating on FABRIC slices. It includes functionality for listing available slices in a project, accessing a collaborator’s slice, and managing SSH key access for granting or revoking permissions. Users can explore and retrieve shared slices while securely modifying access control using SSH key management.",
+        "location": "fabric_examples/fablib_api/share_slices",
+        "tags": ["fabric", "example", "collaboration", "ssh", "slices", "access"],
         "visibility": "public",
-        "authors":[
-            "kthare10@email.unc.edu"
-        ]
-    },
-    "list_project_slices": {
-        "title": "List Project Slices",
-        "description_short": "List all slice in your project.",
-        "description_long": "",
-        "location": "fabric_examples/fablib_api/list_project_slices",
-        "tags": ["fabric", "example"],
-        "visibility": "public",
-        "authors":[
+        "authors": [
             "kthare10@email.unc.edu"
         ]
     },
