@@ -6,58 +6,49 @@ user_invocable: true
 
 # /lead — Team Orchestrator
 
-You are the team lead for the FABRIC jupyter-examples project. The user has invoked `/lead` to ask you to orchestrate a task using the full agent team.
+Dispatch the **lead** agent to handle this task. The lead coordinates a team of 9 specialist agents, dispatching them in parallel where possible and synthesizing their results.
 
-## Your Task
+## How to Invoke
 
-Take the user's request (provided as arguments or from conversation context) and:
-
-1. **Understand** what needs to be done
-2. **Plan** which agents to dispatch
-3. **Dispatch** agents in parallel where possible using the `Agent` tool
-4. **Synthesize** results into a clear, actionable summary
-
-## Dispatch the Lead Agent
-
-Use the `Agent` tool with `subagent_type: "lead"` to handle the orchestration. Pass the user's full request as the prompt, including any file paths or context from the conversation.
-
-The lead agent knows the full team roster and dispatch patterns. It will:
-- Break the task into subtasks
-- Assign each to the best-fit agent
-- Run independent agents in parallel
-- Collect and synthesize results
-
-## Available Team
-
-| Agent | For |
-|-------|-----|
-| `notebook-reviewer` | Review notebooks for standards compliance |
-| `batch-fixer` | Batch-fix common notebook issues |
-| `fablib-helper` | FABlib API questions and code generation |
-| `pr-prep` | Prepare pull requests |
-| `test-runner` | Run validation test suite |
-| `example-finder` | Find notebooks by topic/feature |
-| `site-auditor` | Audit site references and best practices |
-| `docs-generator` | Improve notebook documentation |
-
-## Available Skills
-
-| Skill | For |
-|-------|-----|
-| `/create-notebook` | Scaffold a new example notebook |
-| `/validate` | Run the full validation suite |
-| `/fix-notebook` | Fix notebook compliance issues |
-| `/sync-index` | Sync start_here.ipynb and artifacts.json |
-| `/review-pr` | Full PR review workflow |
-| `/audit` | Full repository audit |
-
-## Examples
+Use the `Agent` tool with `subagent_type: "lead"`. Pass the user's full request — including any file paths, notebook names, or context from the conversation — as the prompt.
 
 ```
-/lead review all changed notebooks and prepare a PR
-/lead find examples about GPU provisioning and suggest improvements
-/lead audit the repository for site issues and fix them
-/lead create a new example about CephFS storage, review it, and add it to the index
+Agent(subagent_type="lead", prompt="<user's request with full context>")
 ```
 
-If no task is provided, describe the team and what you can do.
+The lead agent will:
+1. **Plan** — break the task into subtasks and assign to specialists
+2. **Dispatch** — launch agents in parallel where tasks are independent
+3. **Synthesize** — merge results into a unified report with next steps
+
+## The Team
+
+| Agent | Handles |
+|-------|---------|
+| `notebook-reviewer` | Single-notebook review against project spec |
+| `batch-fixer` | Bulk structural fixes (imports, cleanup, outputs, numbering) |
+| `docs-generator` | Documentation cells, API links, step explanations |
+| `brand-styler` | FABRIC visual branding (CSS, logos, callouts, palettes) |
+| `site-auditor` | Hardcoded sites, stale references, `get_random_site()` usage |
+| `test-runner` | Validation suite execution and result interpretation |
+| `example-finder` | Find notebooks by topic, feature, component, or use case |
+| `fablib-helper` | FABlib API expertise, code snippets, debugging |
+| `pr-prep` | Validate branch changes, generate PR description |
+
+## Example Invocations
+
+```
+/lead audit the repo for site issues and prepare fixes
+/lead review all notebooks changed in this branch
+/lead create a new example about GPU provisioning, review it, and add to the index
+/lead find examples about L2 networking and improve their documentation
+/lead prepare a PR for the current branch
+/lead what notebooks cover SmartNIC usage?
+```
+
+## When to Use /lead vs. Individual Agents
+
+- **Use /lead** when the task spans multiple concerns or you want the full team's perspective
+- **Use an individual agent directly** when you know exactly which specialist you need and the task is narrowly scoped
+
+If no task is provided, the lead will describe the team's capabilities and ask what you'd like to do.

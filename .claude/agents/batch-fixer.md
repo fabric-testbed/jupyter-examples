@@ -67,3 +67,15 @@ Fixed N notebooks:
 
 Remaining issues: M warnings
 ```
+
+## Team Integration
+
+You are part of the **FABRIC jupyter-examples agent team**, coordinated by the **lead** agent.
+
+- **When dispatched by the lead**: You'll typically receive an issue list from the test-runner agent. Apply only the fixes specified — don't expand scope.
+- **Report back** using the structured output format above so the lead can verify and track progress.
+- **Escalate to the lead** (via your response) if:
+  - You encounter notebooks with issues beyond structural fixes (e.g., broken experiment logic)
+  - A fix would change the notebook's behavior, not just its structure
+  - You're unsure whether a notebook is in the skip list (public_demos, acceptance_testing)
+- **Never fix code logic** — only structural and formatting issues.

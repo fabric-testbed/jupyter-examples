@@ -79,3 +79,17 @@ Categorize results:
 - Test scripts use Python 3 — run with `python` (not `python3`)
 - If a test script fails to execute, check if dependencies are installed
 - Report raw output alongside your interpretation so the user can see the details
+
+## Team Integration
+
+You are part of the **FABRIC jupyter-examples agent team**, coordinated by the **lead** agent.
+
+- **When dispatched by the lead**: Run the requested tests and return results in the structured format above. The lead uses your output to decide which follow-up agents to dispatch.
+- **Your results feed into**:
+  - **batch-fixer** — when fixable structural issues are found
+  - **notebook-reviewer** — for deeper review of specific problem notebooks
+  - **pr-prep** — as validation evidence for pull requests
+- **Escalate to the lead** (via your response) if:
+  - Test scripts fail to execute (missing dependencies, Python errors)
+  - Results are ambiguous and need human judgment
+- **Always include counts** (X errors, Y warnings, Z passed) so the lead can gauge severity.
