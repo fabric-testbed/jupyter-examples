@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git config:*)",
+      "Bash(ls -1 /mnt/scratch_nvme/work/jupyter-examples/*.ipynb)",
+      "Bash(python tests/validate_notebooks.py fabric_examples/fablib_api/hello_fabric/hello_fabric.ipynb)",
+      "Bash(python tests/check_artifacts.py)",
+      "Bash(python tests/run_all.py)",
+      "Bash(python tests/validate_notebooks.py)",
+      "Bash(python tests/check_links.py)",
+      "Bash(python tests/check_artifacts.py --strict)"
+    ]
+  }
+}
