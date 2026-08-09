@@ -140,3 +140,5 @@ dmypy.json
 
 # Mac Desktop Files
 .DS_Store
+# Local archive artifact
+jupyter-examples.tar.gz
